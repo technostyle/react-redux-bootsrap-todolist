@@ -14,28 +14,21 @@ export class Todo extends React.Component {
     this.onCompleteToggle = this.onCompleteToggle.bind(this);
   }
 
-  onCompleteToggle() {
+  onCompleteToggle(event) {
+    event.preventDefault();
     this.props.onCompleteToggle(this.props.id);
   }
 
-  onRemove() {
-    this.props.onRemove(this.props.id);
-  }
-
-  onClick(event) {
+  onRemove(event) {
     event.preventDefault();
+    this.props.onRemove(this.props.id);
   }
 
   render() {
     const { id, text, complete } = this.props;
 
     return (
-      <ListGroup.Item
-        eventKey={id}
-        onClick={this.onClick}
-        variant={complete ? "success" : "light"}
-        action={false}
-      >
+      <ListGroup.Item variant={complete ? "success" : "light"}>
         <Container>
           <Row>
             <Col md={6}>{text}</Col>
