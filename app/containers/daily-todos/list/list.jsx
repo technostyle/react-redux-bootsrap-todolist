@@ -1,19 +1,7 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import { FILTER_TYPES } from "modules/daily-todos/constants";
-import { Todo } from "./todo";
-
-const filterTodoCreator = activeFilter => {
-  switch (activeFilter) {
-    case FILTER_TYPES.ALL:
-      return () => true;
-    case FILTER_TYPES.COMPLETE:
-      return ({ complete }) => complete;
-    case FILTER_TYPES.UNCOMPLETE:
-      return ({ complete }) => !complete;
-      deafult: return () => false;
-  }
-};
+import { filterTodoCreator, sortTodoCreator } from "./utils";
+import { Todo } from "../todo";
 
 export const List = ({
   dailyTodos,
@@ -25,6 +13,7 @@ export const List = ({
     {dailyTodos.length
       ? dailyTodos
           .filter(filterTodoCreator(activeFilter))
+          .sort(sortTodoCreator(activeFilter))
           .map(({ id, text, complete }) => (
             <Todo
               key={id}

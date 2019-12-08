@@ -268,8 +268,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
 /* harmony import */ var components_header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/header */ "./app/components/header.jsx");
 /* harmony import */ var components_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/input */ "./app/components/input.jsx");
-/* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./list */ "./app/containers/daily-todos/list.jsx");
-/* harmony import */ var _filter_bar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./filter-bar */ "./app/containers/daily-todos/filter-bar.jsx");
+/* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./list */ "./app/containers/daily-todos/list/index.js");
+/* harmony import */ var _filter_bar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./filter-bar */ "./app/containers/daily-todos/filter-bar/index.js");
 
 
 
@@ -319,10 +319,10 @@ var DailyTodos = function DailyTodos(_ref) {
 
 /***/ }),
 
-/***/ "./app/containers/daily-todos/filter-bar.jsx":
-/*!***************************************************!*\
-  !*** ./app/containers/daily-todos/filter-bar.jsx ***!
-  \***************************************************/
+/***/ "./app/containers/daily-todos/filter-bar/filter-bar.jsx":
+/*!**************************************************************!*\
+  !*** ./app/containers/daily-todos/filter-bar/filter-bar.jsx ***!
+  \**************************************************************/
 /*! exports provided: FilterBar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -361,6 +361,22 @@ var FilterBar = function FilterBar(_ref) {
     value: modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPES"].COMPLETE
   }, "DONE")));
 };
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/filter-bar/index.js":
+/*!********************************************************!*\
+  !*** ./app/containers/daily-todos/filter-bar/index.js ***!
+  \********************************************************/
+/*! exports provided: FilterBar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _filter_bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filter-bar */ "./app/containers/daily-todos/filter-bar/filter-bar.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilterBar", function() { return _filter_bar__WEBPACK_IMPORTED_MODULE_0__["FilterBar"]; });
+
+
 
 /***/ }),
 
@@ -405,10 +421,26 @@ var DailyTodos = Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(map
 
 /***/ }),
 
-/***/ "./app/containers/daily-todos/list.jsx":
-/*!*********************************************!*\
-  !*** ./app/containers/daily-todos/list.jsx ***!
-  \*********************************************/
+/***/ "./app/containers/daily-todos/list/index.js":
+/*!**************************************************!*\
+  !*** ./app/containers/daily-todos/list/index.js ***!
+  \**************************************************/
+/*! exports provided: List */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./list */ "./app/containers/daily-todos/list/list.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "List", function() { return _list__WEBPACK_IMPORTED_MODULE_0__["List"]; });
+
+
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/list/list.jsx":
+/*!**************************************************!*\
+  !*** ./app/containers/daily-todos/list/list.jsx ***!
+  \**************************************************/
 /*! exports provided: List */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -418,48 +450,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/ListGroup */ "./node_modules/react-bootstrap/esm/ListGroup.js");
-/* harmony import */ var modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! modules/daily-todos/constants */ "./app/modules/daily-todos/constants.js");
-/* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todo */ "./app/containers/daily-todos/todo.jsx");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./app/containers/daily-todos/list/utils.js");
+/* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../todo */ "./app/containers/daily-todos/todo/index.js");
 
 
 
 
-
-var filterTodoCreator = function filterTodoCreator(activeFilter) {
-  switch (activeFilter) {
-    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_2__["FILTER_TYPES"].ALL:
-      return function () {
-        return true;
-      };
-
-    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_2__["FILTER_TYPES"].COMPLETE:
-      return function (_ref) {
-        var complete = _ref.complete;
-        return complete;
-      };
-
-    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_2__["FILTER_TYPES"].UNCOMPLETE:
-      return function (_ref2) {
-        var complete = _ref2.complete;
-        return !complete;
-      };
-
-      deafult: return function () {
-        return false;
-      };
-
-  }
-};
-
-var List = function List(_ref3) {
-  var dailyTodos = _ref3.dailyTodos,
-      activeFilter = _ref3.activeFilter,
-      onCompleteTodoToggle = _ref3.onCompleteTodoToggle,
-      onRemoveTodo = _ref3.onRemoveTodo;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_1__["default"], null, dailyTodos.length ? dailyTodos.filter(filterTodoCreator(activeFilter)).map(function (_ref4) {
-    var id = _ref4.id,
-        text = _ref4.text,
-        complete = _ref4.complete;
+var List = function List(_ref) {
+  var dailyTodos = _ref.dailyTodos,
+      activeFilter = _ref.activeFilter,
+      onCompleteTodoToggle = _ref.onCompleteTodoToggle,
+      onRemoveTodo = _ref.onRemoveTodo;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_1__["default"], null, dailyTodos.length ? dailyTodos.filter(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["filterTodoCreator"])(activeFilter)).sort(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["sortTodoCreator"])(activeFilter)).map(function (_ref2) {
+    var id = _ref2.id,
+        text = _ref2.text,
+        complete = _ref2.complete;
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo__WEBPACK_IMPORTED_MODULE_3__["Todo"], {
       key: id,
       id: id,
@@ -473,10 +478,143 @@ var List = function List(_ref3) {
 
 /***/ }),
 
-/***/ "./app/containers/daily-todos/todo.jsx":
-/*!*********************************************!*\
-  !*** ./app/containers/daily-todos/todo.jsx ***!
-  \*********************************************/
+/***/ "./app/containers/daily-todos/list/utils.js":
+/*!**************************************************!*\
+  !*** ./app/containers/daily-todos/list/utils.js ***!
+  \**************************************************/
+/*! exports provided: filterTodoCreator, sortTodoCreator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterTodoCreator", function() { return filterTodoCreator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortTodoCreator", function() { return sortTodoCreator; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! modules/daily-todos/constants */ "./app/modules/daily-todos/constants.js");
+
+
+var filterTodoCreator = function filterTodoCreator(activeFilter) {
+  switch (activeFilter) {
+    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPES"].ALL:
+      return function () {
+        return true;
+      };
+
+    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPES"].COMPLETE:
+      return function (_ref) {
+        var complete = _ref.complete;
+        return complete;
+      };
+
+    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPES"].UNCOMPLETE:
+      return function (_ref2) {
+        var complete = _ref2.complete;
+        return !complete;
+      };
+
+    default:
+      return function () {
+        return false;
+      };
+  }
+};
+var sortTodoCreator = function sortTodoCreator(activeFilter) {
+  switch (activeFilter) {
+    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPES"].ALL:
+      return function (a, b) {
+        if (a.complete && b.complete) {
+          return 0;
+        } else if (!a.complete && !b.complete) {
+          return 0;
+        } else if (a.complete && !b.complete) {
+          return 1;
+        } else if (!a.complete && b.complete) {
+          return -1;
+        }
+
+        console.error("imposible error");
+      };
+
+    default:
+      lodash__WEBPACK_IMPORTED_MODULE_0__["noop"];
+  }
+};
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/todo/done-button.jsx":
+/*!*********************************************************!*\
+  !*** ./app/containers/daily-todos/todo/done-button.jsx ***!
+  \*********************************************************/
+/*! exports provided: DoneButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoneButton", function() { return DoneButton; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+
+
+var DoneButton = function DoneButton(_ref) {
+  var onClick = _ref.onClick;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "outline-success",
+    size: "sm",
+    onClick: onClick
+  }, "done");
+};
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/todo/index.js":
+/*!**************************************************!*\
+  !*** ./app/containers/daily-todos/todo/index.js ***!
+  \**************************************************/
+/*! exports provided: Todo */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo */ "./app/containers/daily-todos/todo/todo.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Todo", function() { return _todo__WEBPACK_IMPORTED_MODULE_0__["Todo"]; });
+
+
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/todo/remove-button.jsx":
+/*!***********************************************************!*\
+  !*** ./app/containers/daily-todos/todo/remove-button.jsx ***!
+  \***********************************************************/
+/*! exports provided: RemoveButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RemoveButton", function() { return RemoveButton; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+
+
+var RemoveButton = function RemoveButton(_ref) {
+  var onClick = _ref.onClick;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "outline-danger",
+    size: "sm",
+    onClick: onClick
+  }, "remove");
+};
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/todo/todo.jsx":
+/*!**************************************************!*\
+  !*** ./app/containers/daily-todos/todo/todo.jsx ***!
+  \**************************************************/
 /*! exports provided: Todo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -491,7 +629,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
 /* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
-/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var _undo_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./undo-button */ "./app/containers/daily-todos/todo/undo-button.jsx");
+/* harmony import */ var _done_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./done-button */ "./app/containers/daily-todos/todo/done-button.jsx");
+/* harmony import */ var _remove_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./remove-button */ "./app/containers/daily-todos/todo/remove-button.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -517,6 +657,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Todo =
 /*#__PURE__*/
 function (_React$Component) {
@@ -528,7 +670,6 @@ function (_React$Component) {
     _classCallCheck(this, Todo);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Todo).call(this, props));
-    _this.onClick = _this.onClick.bind(_assertThisInitialized(_this));
     _this.onRemove = _this.onRemove.bind(_assertThisInitialized(_this));
     _this.onCompleteToggle = _this.onCompleteToggle.bind(_assertThisInitialized(_this));
     return _this;
@@ -536,18 +677,15 @@ function (_React$Component) {
 
   _createClass(Todo, [{
     key: "onCompleteToggle",
-    value: function onCompleteToggle() {
+    value: function onCompleteToggle(event) {
+      event.preventDefault();
       this.props.onCompleteToggle(this.props.id);
     }
   }, {
     key: "onRemove",
-    value: function onRemove() {
-      this.props.onRemove(this.props.id);
-    }
-  }, {
-    key: "onClick",
-    value: function onClick(event) {
+    value: function onRemove(event) {
       event.preventDefault();
+      this.props.onRemove(this.props.id);
     }
   }, {
     key: "render",
@@ -557,29 +695,20 @@ function (_React$Component) {
           text = _this$props.text,
           complete = _this$props.complete;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_2__["default"].Item, {
-        // eventKey={id}
-        onClick: this.onClick,
-        variant: complete ? "success" : "light",
-        action: false
+        variant: complete ? "success" : "light"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
         md: 6
       }, text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
         md: 2
-      }, complete ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        variant: "outline-warning",
-        size: "sm",
+      }, complete ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_undo_button__WEBPACK_IMPORTED_MODULE_6__["UndoButton"], {
         onClick: this.onCompleteToggle
-      }, "undo") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        variant: "outline-success",
-        size: "sm",
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_done_button__WEBPACK_IMPORTED_MODULE_7__["DoneButton"], {
         onClick: this.onCompleteToggle
-      }, "done")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
         md: 2
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        variant: "outline-danger",
-        size: "sm",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_remove_button__WEBPACK_IMPORTED_MODULE_8__["RemoveButton"], {
         onClick: this.onRemove
-      }, "remove")))));
+      })))));
     }
   }]);
 
@@ -591,6 +720,32 @@ Todo.propTypes = {
   complete: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   onCompleteToggle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onRemove: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/todo/undo-button.jsx":
+/*!*********************************************************!*\
+  !*** ./app/containers/daily-todos/todo/undo-button.jsx ***!
+  \*********************************************************/
+/*! exports provided: UndoButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UndoButton", function() { return UndoButton; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+
+
+var UndoButton = function UndoButton(_ref) {
+  var onClick = _ref.onClick;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "outline-warning",
+    size: "sm",
+    onClick: onClick
+  }, "undo");
 };
 
 /***/ }),

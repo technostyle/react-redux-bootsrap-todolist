@@ -4,12 +4,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import { UndoButton } from "./undo-button";
+import { DoneButton } from "./done-button";
+import { RemoveButton } from "./remove-button";
 
 export class Todo extends React.Component {
   constructor(props) {
     super(props);
-    this.onClick = this.onClick.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.onCompleteToggle = this.onCompleteToggle.bind(this);
   }
@@ -34,31 +35,13 @@ export class Todo extends React.Component {
             <Col md={6}>{text}</Col>
             <Col md={2}>
               {complete ? (
-                <Button
-                  variant="outline-warning"
-                  size="sm"
-                  onClick={this.onCompleteToggle}
-                >
-                  undo
-                </Button>
+                <UndoButton onClick={this.onCompleteToggle} />
               ) : (
-                <Button
-                  variant="outline-success"
-                  size="sm"
-                  onClick={this.onCompleteToggle}
-                >
-                  done
-                </Button>
+                <DoneButton onClick={this.onCompleteToggle} />
               )}
             </Col>
             <Col md={2}>
-              <Button
-                variant="outline-danger"
-                size="sm"
-                onClick={this.onRemove}
-              >
-                remove
-              </Button>
+              <RemoveButton onClick={this.onRemove} />
             </Col>
           </Row>
         </Container>
