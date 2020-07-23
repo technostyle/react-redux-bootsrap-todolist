@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/filter-bar/sort-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/filter-bar/sort-bar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/done-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/done-button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/remove-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/remove-button.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,17 +40,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595499420084">
+    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595499714030">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595499420084" />
+    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595499714030" />
     <state x="144" y="124" key="run.anything.popup" timestamp="1595494238707">
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="144" y="124" key="run.anything.popup/0.27.960.513@0.27.960.513" timestamp="1595494238707" />
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595496780026">
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595499617767">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595496780026" />
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595499617767" />
   </component>
 </project>

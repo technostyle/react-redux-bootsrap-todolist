@@ -4,6 +4,6 @@ import { Check } from "react-bootstrap-icons";
 
 export const DoneButton = ({ onClick }) => (
   <Button variant="outline-success" size="sm" onClick={onClick}>
-    <Check size={25} />
+    <Check size={20} />
   </Button>
 );

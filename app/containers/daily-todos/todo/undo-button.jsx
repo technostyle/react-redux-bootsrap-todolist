@@ -4,6 +4,6 @@ import { Check } from "react-bootstrap-icons";
 
 export const UndoButton = ({ onClick }) => (
   <Button variant="outline-warning" size="sm" onClick={onClick}>
-    <Check size={25} />
+    <Check size={20} />
   </Button>
 );
