@@ -19,9 +19,9 @@ export const removeTodo = id => ({
   payload: id
 });
 
-export const updateTodo = todo => ({
+export const updateTodo = (id, text) => ({
   type: DAILY_TODOS_ACTIONS.UPDATE_TODO,
-  payload: todo.id
+  payload: { id, text }
 });
 
 export const setFilter = filter => ({

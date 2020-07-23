@@ -8,6 +8,7 @@ export const List = ({
   activeFilter,
   onCompleteTodoToggle,
   onRemoveTodo,
+  onTodoUpdate,
   onLevelChange,
   onPriorityChange,
   sortingParams
@@ -26,6 +27,7 @@ export const List = ({
               complete={complete}
               onCompleteToggle={onCompleteTodoToggle}
               onRemove={onRemoveTodo}
+              onTodoUpdate={onTodoUpdate}
               level={level}
               priority={priority}
               onLevelChange={onLevelChange}

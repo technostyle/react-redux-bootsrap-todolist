@@ -29,7 +29,7 @@ export class Input extends React.Component {
     return (
       <InputGroup className="mb-3">
         <FormControl
-          placeholder="input todo"
+          placeholder={this.props.placeholder}
           value={this.state.text}
           onKeyDown={this.onKeyDown}
           onChange={this.onChange}
@@ -40,5 +40,6 @@ export class Input extends React.Component {
 }
 
 Input.propTypes = {
-  onEnter: PropTypes.func
+  onEnter: PropTypes.func,
+  placeholder: PropTypes.string
 };

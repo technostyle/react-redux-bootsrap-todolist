@@ -9,7 +9,8 @@ import {
   setFilter,
   setLevelSorting,
   setPrioritySorting,
-  setDateSorting
+  setDateSorting,
+  updateTodo
 } from "modules/daily-todos/actions";
 import {
   getDailyTodos,
@@ -29,6 +30,7 @@ const mapDispatchToProps = dispatch =>
     {
       addTodo,
       removeTodo,
+      updateTodo,
       setTodoLevel,
       setTodoPriority,
       toggleComplete,

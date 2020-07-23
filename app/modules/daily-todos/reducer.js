@@ -41,6 +41,21 @@ const removeTodo = (state, payload) => {
   return newState;
 };
 
+const updateTodo = (state, payload) => {
+  const { id, text } = payload;
+  const newTodos = state.todos.map(todo => {
+    if (todo.id !== id) {
+      return todo;
+    }
+
+    return { ...todo, text };
+  });
+
+  const newState = { ...state, todos: newTodos };
+  writeTodos(newState);
+  return newState;
+};
+
 const toggleComplete = (state, payload) => {
   const newTodos = state.todos.map(todo => {
     if (todo.id !== payload) {
@@ -134,6 +149,8 @@ export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
       return addTodo(state, payload);
     case DAILY_TODOS_ACTIONS.REMOVE_TODO:
       return removeTodo(state, payload);
+    case DAILY_TODOS_ACTIONS.UPDATE_TODO:
+      return updateTodo(state, payload);
     case DAILY_TODOS_ACTIONS.TOGGLE_COMPLETE:
       return toggleComplete(state, payload);
     case DAILY_TODOS_ACTIONS.SET_TODO_LEVEL:

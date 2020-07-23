@@ -11,6 +11,7 @@ export const DailyTodos = ({
   addTodo,
   toggleComplete,
   removeTodo,
+  updateTodo,
   dailyTodos,
   setTodoLevel,
   setTodoPriority,
@@ -42,7 +43,7 @@ export const DailyTodos = ({
     </Row>
     <Row className="justify-content-md-center">
       <Col md={8}>
-        <Input onEnter={addTodo} />
+        <Input onEnter={addTodo} placeholder="input todo" />
       </Col>
     </Row>
     <Row className="justify-content-md-center">
@@ -50,6 +51,7 @@ export const DailyTodos = ({
         <List
           dailyTodos={dailyTodos}
           onRemoveTodo={removeTodo}
+          onTodoUpdate={updateTodo}
           onCompleteTodoToggle={toggleComplete}
           onLevelChange={setTodoLevel}
           onPriorityChange={setTodoPriority}
