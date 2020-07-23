@@ -429,6 +429,7 @@ var DailyTodos = function DailyTodos(_ref) {
       setFilter = _ref.setFilter,
       setLevelSorting = _ref.setLevelSorting,
       setPrioritySorting = _ref.setPrioritySorting,
+      setDateSorting = _ref.setDateSorting,
       sortingParams = _ref.sortingParams;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "justify-content-md-center"
@@ -445,7 +446,8 @@ var DailyTodos = function DailyTodos(_ref) {
     activeFilter: activeFilter,
     onFilterChange: setFilter,
     onLevelSort: setLevelSorting,
-    onPrioritySort: setPrioritySorting
+    onPrioritySort: setPrioritySorting,
+    onDateSort: setDateSorting
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "justify-content-md-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -496,13 +498,15 @@ var FilterBar = function FilterBar(_ref) {
   var activeFilter = _ref.activeFilter,
       onFilterChange = _ref.onFilterChange,
       onLevelSort = _ref.onLevelSort,
-      onPrioritySort = _ref.onPrioritySort;
+      onPrioritySort = _ref.onPrioritySort,
+      onDateSort = _ref.onDateSort;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_status_filter__WEBPACK_IMPORTED_MODULE_4__["StatusFilter"], {
     activeFilter: activeFilter,
     onFilterChange: onFilterChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sort_bar__WEBPACK_IMPORTED_MODULE_5__["SortBar"], {
     onLevelSort: onLevelSort,
-    onPrioritySort: onPrioritySort
+    onPrioritySort: onPrioritySort,
+    onDateSort: onDateSort
   }))));
 };
 
@@ -541,7 +545,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var SortBar = function SortBar(_ref) {
   var onLevelSort = _ref.onLevelSort,
-      onPrioritySort = _ref.onPrioritySort;
+      onPrioritySort = _ref.onPrioritySort,
+      onDateSort = _ref.onDateSort;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], {
     className: "mb-3",
     "aria-label": "Toolbar with Button groups"
@@ -550,11 +555,14 @@ var SortBar = function SortBar(_ref) {
     "aria-label": "First group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     variant: "secondary",
+    onClick: onDateSort
+  }, "Date sort"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    variant: "secondary",
     onClick: onLevelSort
-  }, "Lvl sort"), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+  }, "Lvl sort"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     variant: "secondary",
     onClick: onPrioritySort
-  }, "Prt sort"), ' '));
+  }, "Prt sort"), " "));
 };
 
 /***/ }),
@@ -642,7 +650,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     toggleComplete: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["toggleComplete"],
     setFilter: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setFilter"],
     setLevelSorting: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setLevelSorting"],
-    setPrioritySorting: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setPrioritySorting"]
+    setPrioritySorting: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setPrioritySorting"],
+    setDateSorting: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setDateSorting"]
   }, dispatch);
 };
 
@@ -721,17 +730,20 @@ var List = function List(_ref) {
 /*!**************************************************!*\
   !*** ./app/containers/daily-todos/list/utils.js ***!
   \**************************************************/
-/*! exports provided: filterTodoCreator, statusSortCreator, sortParamsComparator */
+/*! exports provided: filterTodoCreator, sortParamsComparator */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterTodoCreator", function() { return filterTodoCreator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "statusSortCreator", function() { return statusSortCreator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortParamsComparator", function() { return sortParamsComparator; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! modules/daily-todos/constants */ "./app/modules/daily-todos/constants.js");
+var _mapSortTypeToTodoPro;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var filterTodoCreator = function filterTodoCreator(activeFilter) {
@@ -759,27 +771,7 @@ var filterTodoCreator = function filterTodoCreator(activeFilter) {
       };
   }
 };
-var statusSortCreator = function statusSortCreator(activeFilter) {
-  switch (activeFilter) {
-    case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPES"].ALL:
-      return function (a, b) {
-        if (a.complete && b.complete) {
-          return 0;
-        } else if (!a.complete && !b.complete) {
-          return 0;
-        } else if (a.complete && !b.complete) {
-          return 1;
-        } else if (!a.complete && b.complete) {
-          return -1;
-        }
-
-        console.error("imposible error");
-      };
-
-    default:
-      lodash__WEBPACK_IMPORTED_MODULE_0__["noop"];
-  }
-};
+var mapSortTypeToTodoProp = (_mapSortTypeToTodoPro = {}, _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].DATE, 'id'), _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].LEVEL, 'level'), _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].PRIORITY, 'priority'), _mapSortTypeToTodoPro);
 
 var propComparatorCreator = function propComparatorCreator(prop, isIncr) {
   return isIncr ? function (a, b) {
@@ -793,12 +785,7 @@ var sortParamsComparator = function sortParamsComparator() {
   var sortingParams = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var type = sortingParams.type,
       incrDecr = sortingParams.incrDecr;
-
-  if (!type) {
-    return dateSort;
-  }
-
-  return propComparatorCreator(type.toLowerCase(), incrDecr === modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].INCR);
+  return propComparatorCreator(mapSortTypeToTodoProp[type], incrDecr === modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].INCR);
 };
 
 /***/ }),
@@ -1107,7 +1094,7 @@ var writeTodos = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["flow"])(safeJsonStr
 /*!********************************************!*\
   !*** ./app/modules/daily-todos/actions.js ***!
   \********************************************/
-/*! exports provided: addTodo, toggleComplete, removeTodo, updateTodo, setFilter, setTodoLevel, setTodoPriority, setPrioritySorting, setLevelSorting */
+/*! exports provided: addTodo, toggleComplete, removeTodo, updateTodo, setFilter, setTodoLevel, setTodoPriority, setPrioritySorting, setLevelSorting, setDateSorting */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1121,6 +1108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTodoPriority", function() { return setTodoPriority; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setPrioritySorting", function() { return setPrioritySorting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setLevelSorting", function() { return setLevelSorting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setDateSorting", function() { return setDateSorting; });
 /* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducer */ "./app/modules/daily-todos/reducer.js");
 
 var addTodo = function addTodo(text) {
@@ -1174,7 +1162,8 @@ var setTodoPriority = function setTodoPriority(id, priority) {
       priority: priority
     }
   };
-};
+}; // TODO: combine actions once sort bar is rewritten with hooks
+
 var setPrioritySorting = function setPrioritySorting() {
   return {
     type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_PRIORITY_SORTING
@@ -1183,6 +1172,11 @@ var setPrioritySorting = function setPrioritySorting() {
 var setLevelSorting = function setLevelSorting() {
   return {
     type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_LEVEL_SORTING
+  };
+};
+var setDateSorting = function setDateSorting() {
+  return {
+    type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_DATE_SORTING
   };
 };
 
@@ -1205,10 +1199,11 @@ var FILTER_TYPES = {
   UNCOMPLETE: "UNCOMPLETE"
 };
 var SORTING_TYPES = {
-  LEVEL: 'LEVEL',
-  PRIORITY: 'PRIORITY',
-  INCR: 'INCR',
-  DECR: 'DECR'
+  LEVEL: "LEVEL",
+  PRIORITY: "PRIORITY",
+  DATE: 'DATE',
+  INCR: "INCR",
+  DECR: "DECR"
 };
 
 /***/ }),
@@ -1265,15 +1260,16 @@ var DAILY_TODOS_ACTIONS = {
   TOGGLE_COMPLETE: "TOGGLE_COMPLETE",
   UPDATE_TODO: "UPDATE_TODO",
   SET_FILTER: "SET_FILTER",
-  SET_PRIORITY_SORTING: 'SET_PRIORITY_SORTING',
-  SET_LEVEL_SORTING: 'SET_LEVEL_SORTING'
+  SET_PRIORITY_SORTING: "SET_PRIORITY_SORTING",
+  SET_LEVEL_SORTING: "SET_LEVEL_SORTING",
+  SET_DATE_SORTING: "SET_DATE_SORTING"
 };
 var DEFAULT_STATE = {
   todos: [],
   filter: _constants__WEBPACK_IMPORTED_MODULE_2__["FILTER_TYPES"].ALL,
   sorting: {
-    type: null,
-    incrDecr: null
+    type: _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DATE,
+    incrDecr: _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR
   }
 };
 var LOCAL_STORAGE_STATE = Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["readTodos"])();
@@ -1379,7 +1375,7 @@ var setFilter = function setFilter(state, payload) {
 };
 
 var setLevelSorting = function setLevelSorting(state) {
-  var incrDecr = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(state, 'sorting.incrDecr') === _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR ? _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].INCR : _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR;
+  var incrDecr = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(state, "sorting.incrDecr") === _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR ? _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].INCR : _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR;
   var newSorting = {
     type: _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].LEVEL,
     incrDecr: incrDecr
@@ -1394,9 +1390,24 @@ var setLevelSorting = function setLevelSorting(state) {
 };
 
 var setPrioritySorting = function setPrioritySorting(state) {
-  var incrDecr = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(state, 'sorting.incrDecr') === _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR ? _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].INCR : _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR;
+  var incrDecr = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(state, "sorting.incrDecr") === _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR ? _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].INCR : _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR;
   var newSorting = {
     type: _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].PRIORITY,
+    incrDecr: incrDecr
+  };
+
+  var newState = _objectSpread(_objectSpread({}, state), {}, {
+    sorting: newSorting
+  });
+
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
+  return newState;
+};
+
+var setDateSorting = function setDateSorting(state) {
+  var incrDecr = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(state, "sorting.incrDecr") === _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR ? _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].INCR : _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR;
+  var newSorting = {
+    type: _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DATE,
     incrDecr: incrDecr
   };
 
@@ -1440,6 +1451,9 @@ var dailyTodosReducer = function dailyTodosReducer() {
     case DAILY_TODOS_ACTIONS.SET_PRIORITY_SORTING:
       return setPrioritySorting(state);
 
+    case DAILY_TODOS_ACTIONS.SET_DATE_SORTING:
+      return setDateSorting(state);
+
     default:
       return state;
   }
@@ -1466,7 +1480,7 @@ __webpack_require__.r(__webpack_exports__);
 var getDailyTodosDomain = Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])("dailyTodos", {});
 var getDailyTodos = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getDailyTodosDomain, Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])("todos", []));
 var getActiveFilter = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getDailyTodosDomain, Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])("filter", null));
-var getSortingParams = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getDailyTodosDomain, Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])('sorting'));
+var getSortingParams = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getDailyTodosDomain, Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])("sorting"));
 
 /***/ }),
 
