@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Dropdown } from "react-bootstrap";
 
 const oneToTenArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const oneToTenArrayOnStrings = oneToTenArray.map(String);
 
 const getVariant = value => {
   if (1 <= value && value <= 2) {
@@ -51,7 +52,7 @@ export class OneToTenSelect extends React.Component {
           size="sm"
           id="one-to-ten-selected-item"
         >
-          {`${label}:  ${value}`}
+          {value ? `${label}:  ${value}` : `Set ${label}`}
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -68,6 +69,6 @@ export class OneToTenSelect extends React.Component {
 
 OneToTenSelect.propTypes = {
   label: PropTypes.string,
-  value: PropTypes.oneOf(oneToTenArray),
+  value: PropTypes.oneOf([...oneToTenArray, ...oneToTenArrayOnStrings]),
   onSelect: PropTypes.func
 };

@@ -3,6 +3,8 @@ import { bindActionCreators } from "redux";
 import {
   addTodo,
   removeTodo,
+  setTodoLevel,
+  setTodoPriority,
   toggleComplete,
   setFilter
 } from "modules/daily-todos/actions";
@@ -16,7 +18,14 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { addTodo, removeTodo, toggleComplete, setFilter },
+    {
+      addTodo,
+      removeTodo,
+      setTodoLevel,
+      setTodoPriority,
+      toggleComplete,
+      setFilter
+    },
     dispatch
   );
 

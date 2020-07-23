@@ -14,6 +14,8 @@ export class Todo extends React.Component {
     super(props);
     this.onRemove = this.onRemove.bind(this);
     this.onCompleteToggle = this.onCompleteToggle.bind(this);
+    this.onPriorityChange = this.onPriorityChange.bind(this);
+    this.onLevelChange = this.onLevelChange.bind(this);
   }
 
   onCompleteToggle(event) {
@@ -26,8 +28,16 @@ export class Todo extends React.Component {
     this.props.onRemove(this.props.id);
   }
 
+  onPriorityChange(value) {
+    this.props.onPriorityChange(this.props.id, value);
+  }
+
+  onLevelChange(value) {
+    this.props.onLevelChange(this.props.id, value);
+  }
+
   render() {
-    const { id, text, complete } = this.props;
+    const { text, complete, level, priority } = this.props;
 
     return (
       <ListGroup.Item variant={complete ? "success" : "light"}>
@@ -45,10 +55,18 @@ export class Todo extends React.Component {
               <RemoveButton onClick={this.onRemove} />
             </Col>
             <Col md={2}>
-              <OneToTenSelect label="Lvl" value={1} onChange={console.log} />
+              <OneToTenSelect
+                label="Lvl"
+                value={level}
+                onChange={this.onLevelChange}
+              />
             </Col>
             <Col md={2}>
-              <OneToTenSelect label="Imp" value={1} onChange={console.log} />
+              <OneToTenSelect
+                label="Imp"
+                value={priority}
+                onChange={this.onPriorityChange}
+              />
             </Col>
           </Row>
         </Container>
@@ -62,5 +80,9 @@ Todo.propTypes = {
   text: PropTypes.string,
   complete: PropTypes.bool,
   onCompleteToggle: PropTypes.func,
-  onRemove: PropTypes.func
+  onRemove: PropTypes.func,
+  level: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  priority: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onLevelChange: PropTypes.func,
+  onPriorityChange: PropTypes.func
 };

@@ -4,6 +4,8 @@ import { FILTER_TYPES } from "./constants";
 export const DAILY_TODOS_ACTIONS = {
   ADD_TODO: "ADD_TODO",
   REMOVE_TODO: "REMOVE_TODO",
+  SET_TODO_LEVEL: "SET_TODO_LEVEL",
+  SET_TODO_PRIORITY: "SET_TODO_PRIORITY",
   TOGGLE_COMPLETE: "TOGGLE_COMPLETE",
   UPDATE_TODO: "UPDATE_TODO",
   SET_FILTER: "SET_FILTER"
@@ -46,6 +48,34 @@ const toggleComplete = (state, payload) => {
   return newState;
 };
 
+const setTodoLevel = (state, payload) => {
+  const { id, level } = payload;
+  const newTodos = state.todos.map(todo => {
+    if (todo.id !== id) {
+      return todo;
+    }
+    return { ...todo, level };
+  });
+
+  const newState = { ...state, todos: newTodos };
+  writeTodos(newState);
+  return newState;
+};
+
+const setTodoPriority = (state, payload) => {
+  const { id, priority } = payload;
+  const newTodos = state.todos.map(todo => {
+    if (todo.id !== id) {
+      return todo;
+    }
+    return { ...todo, priority };
+  });
+
+  const newState = { ...state, todos: newTodos };
+  writeTodos(newState);
+  return newState;
+};
+
 const setFilter = (state, payload) => {
   const [prev, cur] = payload;
   if (!cur) {
@@ -65,6 +95,10 @@ export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
       return removeTodo(state, payload);
     case DAILY_TODOS_ACTIONS.TOGGLE_COMPLETE:
       return toggleComplete(state, payload);
+    case DAILY_TODOS_ACTIONS.SET_TODO_LEVEL:
+      return setTodoLevel(state, payload);
+    case DAILY_TODOS_ACTIONS.SET_TODO_PRIORITY:
+      return setTodoPriority(state, payload);
     case DAILY_TODOS_ACTIONS.SET_FILTER:
       return setFilter(state, payload);
     default:

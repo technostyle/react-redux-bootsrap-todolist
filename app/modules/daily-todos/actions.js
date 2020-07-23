@@ -28,3 +28,13 @@ export const setFilter = filter => ({
   type: DAILY_TODOS_ACTIONS.SET_FILTER,
   payload: filter
 });
+
+export const setTodoLevel = (id, level) => ({
+  type: DAILY_TODOS_ACTIONS.SET_TODO_LEVEL,
+  payload: { id, level }
+});
+
+export const setTodoPriority = (id, priority) => ({
+  type: DAILY_TODOS_ACTIONS.SET_TODO_PRIORITY,
+  payload: { id, priority }
+});

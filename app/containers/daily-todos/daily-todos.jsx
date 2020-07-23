@@ -12,6 +12,8 @@ export const DailyTodos = ({
   toggleComplete,
   removeTodo,
   dailyTodos,
+  setTodoLevel,
+  setTodoPriority,
   activeFilter,
   setFilter
 }) => (
@@ -37,6 +39,8 @@ export const DailyTodos = ({
           dailyTodos={dailyTodos}
           onRemoveTodo={removeTodo}
           onCompleteTodoToggle={toggleComplete}
+          onLevelChange={setTodoLevel}
+          onPriorityChange={setTodoPriority}
           activeFilter={activeFilter}
         />
       </Col>

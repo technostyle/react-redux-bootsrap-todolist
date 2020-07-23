@@ -7,14 +7,16 @@ export const List = ({
   dailyTodos,
   activeFilter,
   onCompleteTodoToggle,
-  onRemoveTodo
+  onRemoveTodo,
+  onLevelChange,
+  onPriorityChange
 }) => (
   <ListGroup>
     {dailyTodos.length
       ? dailyTodos
           .filter(filterTodoCreator(activeFilter))
           .sort(sortTodoCreator(activeFilter))
-          .map(({ id, text, complete }) => (
+          .map(({ id, text, complete, level, priority }) => (
             <Todo
               key={id}
               id={id}
@@ -22,6 +24,10 @@ export const List = ({
               complete={complete}
               onCompleteToggle={onCompleteTodoToggle}
               onRemove={onRemoveTodo}
+              level={level}
+              priority={priority}
+              onLevelChange={onLevelChange}
+              onPriorityChange={onPriorityChange}
             />
           ))
       : null}

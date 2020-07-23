@@ -272,6 +272,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -296,6 +308,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 var oneToTenArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var oneToTenArrayOnStrings = oneToTenArray.map(String);
 
 var getVariant = function getVariant(value) {
   if (1 <= value && value <= 2) {
@@ -359,7 +372,7 @@ var OneToTenSelect = /*#__PURE__*/function (_React$Component) {
         variant: getVariant(value),
         size: "sm",
         id: "one-to-ten-selected-item"
-      }, "".concat(label, ":  ").concat(value)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Dropdown"].Menu, null, oneToTenArray.map(function (value) {
+      }, value ? "".concat(label, ":  ").concat(value) : "Set ".concat(label)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Dropdown"].Menu, null, oneToTenArray.map(function (value) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Dropdown"].Item, {
           eventKey: value,
           key: value
@@ -372,7 +385,7 @@ var OneToTenSelect = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 OneToTenSelect.propTypes = {
   label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(oneToTenArray),
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([].concat(oneToTenArray, _toConsumableArray(oneToTenArrayOnStrings))),
   onSelect: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
 };
 
@@ -410,6 +423,8 @@ var DailyTodos = function DailyTodos(_ref) {
       toggleComplete = _ref.toggleComplete,
       removeTodo = _ref.removeTodo,
       dailyTodos = _ref.dailyTodos,
+      setTodoLevel = _ref.setTodoLevel,
+      setTodoPriority = _ref.setTodoPriority,
       activeFilter = _ref.activeFilter,
       setFilter = _ref.setFilter;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -440,6 +455,8 @@ var DailyTodos = function DailyTodos(_ref) {
     dailyTodos: dailyTodos,
     onRemoveTodo: removeTodo,
     onCompleteTodoToggle: toggleComplete,
+    onLevelChange: setTodoLevel,
+    onPriorityChange: setTodoPriority,
     activeFilter: activeFilter
   }))));
 };
@@ -539,6 +556,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return Object(redux__WEBPACK_IMPORTED_MODULE_1__["bindActionCreators"])({
     addTodo: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["addTodo"],
     removeTodo: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["removeTodo"],
+    setTodoLevel: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setTodoLevel"],
+    setTodoPriority: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setTodoPriority"],
     toggleComplete: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["toggleComplete"],
     setFilter: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setFilter"]
   }, dispatch);
@@ -587,18 +606,26 @@ var List = function List(_ref) {
   var dailyTodos = _ref.dailyTodos,
       activeFilter = _ref.activeFilter,
       onCompleteTodoToggle = _ref.onCompleteTodoToggle,
-      onRemoveTodo = _ref.onRemoveTodo;
+      onRemoveTodo = _ref.onRemoveTodo,
+      onLevelChange = _ref.onLevelChange,
+      onPriorityChange = _ref.onPriorityChange;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_1__["default"], null, dailyTodos.length ? dailyTodos.filter(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["filterTodoCreator"])(activeFilter)).sort(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["sortTodoCreator"])(activeFilter)).map(function (_ref2) {
     var id = _ref2.id,
         text = _ref2.text,
-        complete = _ref2.complete;
+        complete = _ref2.complete,
+        level = _ref2.level,
+        priority = _ref2.priority;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo__WEBPACK_IMPORTED_MODULE_3__["Todo"], {
       key: id,
       id: id,
       text: text,
       complete: complete,
       onCompleteToggle: onCompleteTodoToggle,
-      onRemove: onRemoveTodo
+      onRemove: onRemoveTodo,
+      level: level,
+      priority: priority,
+      onLevelChange: onLevelChange,
+      onPriorityChange: onPriorityChange
     });
   }) : null);
 };
@@ -805,6 +832,8 @@ var Todo = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.onRemove = _this.onRemove.bind(_assertThisInitialized(_this));
     _this.onCompleteToggle = _this.onCompleteToggle.bind(_assertThisInitialized(_this));
+    _this.onPriorityChange = _this.onPriorityChange.bind(_assertThisInitialized(_this));
+    _this.onLevelChange = _this.onLevelChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -821,12 +850,23 @@ var Todo = /*#__PURE__*/function (_React$Component) {
       this.props.onRemove(this.props.id);
     }
   }, {
+    key: "onPriorityChange",
+    value: function onPriorityChange(value) {
+      this.props.onPriorityChange(this.props.id, value);
+    }
+  }, {
+    key: "onLevelChange",
+    value: function onLevelChange(value) {
+      this.props.onLevelChange(this.props.id, value);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          id = _this$props.id,
           text = _this$props.text,
-          complete = _this$props.complete;
+          complete = _this$props.complete,
+          level = _this$props.level,
+          priority = _this$props.priority;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_2__["default"].Item, {
         variant: complete ? "success" : "light"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -845,14 +885,14 @@ var Todo = /*#__PURE__*/function (_React$Component) {
         md: 2
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_one_to_ten_select__WEBPACK_IMPORTED_MODULE_6__["OneToTenSelect"], {
         label: "Lvl",
-        value: 1,
-        onChange: console.log
+        value: level,
+        onChange: this.onLevelChange
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
         md: 2
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_one_to_ten_select__WEBPACK_IMPORTED_MODULE_6__["OneToTenSelect"], {
         label: "Imp",
-        value: 1,
-        onChange: console.log
+        value: priority,
+        onChange: this.onPriorityChange
       })))));
     }
   }]);
@@ -864,7 +904,11 @@ Todo.propTypes = {
   text: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   complete: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   onCompleteToggle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  onRemove: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  onRemove: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  level: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number]),
+  priority: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number]),
+  onLevelChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onPriorityChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
 };
 
 /***/ }),
@@ -957,7 +1001,7 @@ var writeTodos = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["flow"])(safeJsonStr
 /*!********************************************!*\
   !*** ./app/modules/daily-todos/actions.js ***!
   \********************************************/
-/*! exports provided: addTodo, toggleComplete, removeTodo, updateTodo, setFilter */
+/*! exports provided: addTodo, toggleComplete, removeTodo, updateTodo, setFilter, setTodoLevel, setTodoPriority */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -967,6 +1011,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeTodo", function() { return removeTodo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateTodo", function() { return updateTodo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setFilter", function() { return setFilter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTodoLevel", function() { return setTodoLevel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTodoPriority", function() { return setTodoPriority; });
 /* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducer */ "./app/modules/daily-todos/reducer.js");
 
 var addTodo = function addTodo(text) {
@@ -1001,6 +1047,24 @@ var setFilter = function setFilter(filter) {
   return {
     type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_FILTER,
     payload: filter
+  };
+};
+var setTodoLevel = function setTodoLevel(id, level) {
+  return {
+    type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_TODO_LEVEL,
+    payload: {
+      id: id,
+      level: level
+    }
+  };
+};
+var setTodoPriority = function setTodoPriority(id, priority) {
+  return {
+    type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_TODO_PRIORITY,
+    payload: {
+      id: id,
+      priority: priority
+    }
   };
 };
 
@@ -1068,6 +1132,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var DAILY_TODOS_ACTIONS = {
   ADD_TODO: "ADD_TODO",
   REMOVE_TODO: "REMOVE_TODO",
+  SET_TODO_LEVEL: "SET_TODO_LEVEL",
+  SET_TODO_PRIORITY: "SET_TODO_PRIORITY",
   TOGGLE_COMPLETE: "TOGGLE_COMPLETE",
   UPDATE_TODO: "UPDATE_TODO",
   SET_FILTER: "SET_FILTER"
@@ -1119,6 +1185,48 @@ var toggleComplete = function toggleComplete(state, payload) {
   return newState;
 };
 
+var setTodoLevel = function setTodoLevel(state, payload) {
+  var id = payload.id,
+      level = payload.level;
+  var newTodos = state.todos.map(function (todo) {
+    if (todo.id !== id) {
+      return todo;
+    }
+
+    return _objectSpread(_objectSpread({}, todo), {}, {
+      level: level
+    });
+  });
+
+  var newState = _objectSpread(_objectSpread({}, state), {}, {
+    todos: newTodos
+  });
+
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  return newState;
+};
+
+var setTodoPriority = function setTodoPriority(state, payload) {
+  var id = payload.id,
+      priority = payload.priority;
+  var newTodos = state.todos.map(function (todo) {
+    if (todo.id !== id) {
+      return todo;
+    }
+
+    return _objectSpread(_objectSpread({}, todo), {}, {
+      priority: priority
+    });
+  });
+
+  var newState = _objectSpread(_objectSpread({}, state), {}, {
+    todos: newTodos
+  });
+
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  return newState;
+};
+
 var setFilter = function setFilter(state, payload) {
   var _payload = _slicedToArray(payload, 2),
       prev = _payload[0],
@@ -1152,6 +1260,12 @@ var dailyTodosReducer = function dailyTodosReducer() {
 
     case DAILY_TODOS_ACTIONS.TOGGLE_COMPLETE:
       return toggleComplete(state, payload);
+
+    case DAILY_TODOS_ACTIONS.SET_TODO_LEVEL:
+      return setTodoLevel(state, payload);
+
+    case DAILY_TODOS_ACTIONS.SET_TODO_PRIORITY:
+      return setTodoPriority(state, payload);
 
     case DAILY_TODOS_ACTIONS.SET_FILTER:
       return setFilter(state, payload);

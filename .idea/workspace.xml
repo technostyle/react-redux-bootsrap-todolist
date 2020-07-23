@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/list/list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/list/list.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/build.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595478116082</updated>
-      <workItem from="1595478117861" duration="2971000" />
+      <workItem from="1595478117861" duration="4784000" />
     </task>
     <servers />
   </component>
