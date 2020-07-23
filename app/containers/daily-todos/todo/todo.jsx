@@ -5,13 +5,14 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { formatDate } from "utils";
 import { OneToTenSelect } from "components/one-to-ten-select";
 import { Input } from "components/input";
 import { UndoButton } from "./undo-button";
 import { DoneButton } from "./done-button";
 import { RemoveButton } from "./remove-button";
 import { EditButton } from "./edit-button";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { SubTaskListButton } from "./sub-task-list-buttons";
 import { SubTaskList } from "./sub-task-list";
 
@@ -113,10 +114,10 @@ export class Todo extends React.Component {
             <Col md={1}>
               <EditButton onClick={this.onEditToggle} />
             </Col>
-            <Col md={2}>
+            <Col md={1}>
               <RemoveButton onClick={this.onRemove} />
             </Col>
-            <Col md={2}>
+            <Col md={1}>
               <OverlayTrigger
                 placement="bottom"
                 overlay={<Tooltip id={"level-select-tooltip"}>Level</Tooltip>}
@@ -128,7 +129,7 @@ export class Todo extends React.Component {
                 />
               </OverlayTrigger>
             </Col>
-            <Col md={2}>
+            <Col>
               <OverlayTrigger
                 placement="bottom"
                 overlay={
@@ -142,6 +143,7 @@ export class Todo extends React.Component {
                 />
               </OverlayTrigger>
             </Col>
+            <Col md={2}>{formatDate(id)}</Col>
           </Row>
 
           {subTaskListOpen ? (
