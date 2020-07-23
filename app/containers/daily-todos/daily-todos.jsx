@@ -21,7 +21,9 @@ export const DailyTodos = ({
   setPrioritySorting,
   setDateSorting,
   addSubTask,
-  sortingParams
+  sortingParams,
+  toggleCompleteSubTask,
+  removeSubTask
 }) => (
   <Container>
     <Row className="justify-content-md-center">
@@ -59,6 +61,8 @@ export const DailyTodos = ({
           onSubTaskAdd={addSubTask}
           activeFilter={activeFilter}
           sortingParams={sortingParams}
+          onSubTaskCompleteToggle={toggleCompleteSubTask}
+          onSubTaskRemove={removeSubTask}
         />
       </Col>
     </Row>

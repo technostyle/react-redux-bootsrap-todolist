@@ -12,7 +12,9 @@ export const List = ({
   onLevelChange,
   onPriorityChange,
   onSubTaskAdd,
-  sortingParams
+  sortingParams,
+  onSubTaskCompleteToggle,
+  onSubTaskRemove
 }) => (
   <ListGroup>
     {dailyTodos.length
@@ -34,6 +36,8 @@ export const List = ({
               onPriorityChange={onPriorityChange}
               onSubTaskAdd={onSubTaskAdd}
               subTaskList={subTaskList}
+              onSubTaskCompleteToggle={onSubTaskCompleteToggle}
+              onSubTaskRemove={onSubTaskRemove}
             />
           ))
       : null}

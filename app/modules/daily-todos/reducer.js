@@ -13,7 +13,9 @@ export const DAILY_TODOS_ACTIONS = {
   SET_PRIORITY_SORTING: "SET_PRIORITY_SORTING",
   SET_LEVEL_SORTING: "SET_LEVEL_SORTING",
   SET_DATE_SORTING: "SET_DATE_SORTING",
-  ADD_SUB_TASK: "ADD_SUB_TASK"
+  ADD_SUB_TASK: "ADD_SUB_TASK",
+  TOGGLE_COMPLETE_SUB_TASK: "TOGGLE_COMPLETE_SUB_TASK",
+  REMOVE_SUB_TASK: "REMOVE_SUB_TASK"
 };
 
 const DEFAULT_STATE = {
@@ -149,6 +151,50 @@ const addSubTask = (state, payload) => {
   return newState;
 };
 
+const toggleCompleteSubTask = (state, payload) => {
+  const { taskId, subTaskId } = payload;
+
+  const newTodos = state.todos.map(todo => {
+    if (todo.id !== taskId) {
+      return todo;
+    }
+
+    const subTaskList = todo.subTaskList.map(subTask => {
+      if (subTask.id !== subTaskId) {
+        return subTask;
+      }
+
+      return { ...subTask, complete: !subTask.complete };
+    });
+
+    return { ...todo, subTaskList };
+  });
+
+  const newState = { ...state, todos: newTodos };
+  writeTodos(newState);
+  return newState;
+};
+
+const removeSubTask = (state, payload) => {
+  const { taskId, subTaskId } = payload;
+
+  const newTodos = state.todos.map(todo => {
+    if (todo.id !== taskId) {
+      return todo;
+    }
+
+    const subTaskList = todo.subTaskList.filter(
+      subTask => subTask.id !== subTaskId
+    );
+
+    return { ...todo, subTaskList };
+  });
+
+  const newState = { ...state, todos: newTodos };
+  writeTodos(newState);
+  return newState;
+};
+
 const setDateSorting = state => {
   const incrDecr =
     get(state, "sorting.incrDecr") === SORTING_TYPES.DECR
@@ -184,6 +230,10 @@ export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
       return setDateSorting(state);
     case DAILY_TODOS_ACTIONS.ADD_SUB_TASK:
       return addSubTask(state, payload);
+    case DAILY_TODOS_ACTIONS.TOGGLE_COMPLETE_SUB_TASK:
+      return toggleCompleteSubTask(state, payload);
+    case DAILY_TODOS_ACTIONS.REMOVE_SUB_TASK:
+      return removeSubTask(state, payload);
     default:
       return state;
   }

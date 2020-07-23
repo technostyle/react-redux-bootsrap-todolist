@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list-buttons.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/danila.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/danila.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/list/list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/list/list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" afterDir="false" />
@@ -52,10 +51,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="27" width="704" height="513" key="find.popup" timestamp="1595510189053">
+    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595513221608">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="513" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595510189053" />
+    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595513221608" />
     <state x="144" y="124" key="run.anything.popup" timestamp="1595508969832">
       <screen x="0" y="27" width="960" height="513" />
     </state>

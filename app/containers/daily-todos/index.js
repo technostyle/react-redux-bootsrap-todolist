@@ -11,7 +11,9 @@ import {
   setPrioritySorting,
   setDateSorting,
   updateTodo,
-  addSubTask
+  addSubTask,
+  toggleCompleteSubTask,
+  removeSubTask
 } from "modules/daily-todos/actions";
 import {
   getDailyTodos,
@@ -39,7 +41,9 @@ const mapDispatchToProps = dispatch =>
       setLevelSorting,
       setPrioritySorting,
       setDateSorting,
-      addSubTask
+      addSubTask,
+      toggleCompleteSubTask,
+      removeSubTask
     },
     dispatch
   );

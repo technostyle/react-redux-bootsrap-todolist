@@ -72,7 +72,16 @@ export class Todo extends React.Component {
   }
 
   render() {
-    const { text, complete, level, priority, subTaskList } = this.props;
+    const {
+      id,
+      text,
+      complete,
+      level,
+      priority,
+      subTaskList,
+      onSubTaskCompleteToggle,
+      onSubTaskRemove
+    } = this.props;
     const { editing, subTaskListOpen } = this.state;
 
     return (
@@ -135,8 +144,11 @@ export class Todo extends React.Component {
 
           {subTaskListOpen ? (
             <SubTaskList
+              taskId={id}
               onSubTaskInput={this.onSubTaskAdd}
               subTaskList={subTaskList || []}
+              onSubTaskCompleteToggle={onSubTaskCompleteToggle}
+              onSubTaskRemove={onSubTaskRemove}
             />
           ) : null}
         </Container>
@@ -157,5 +169,7 @@ Todo.propTypes = {
   onPriorityChange: PropTypes.func,
   onTodoUpdate: PropTypes.func,
   onSubTaskAdd: PropTypes.func,
-  subTaskList: PropTypes.oneOfType([PropTypes.array, PropTypes.undefined])
+  subTaskList: PropTypes.oneOfType([PropTypes.array, PropTypes.undefined]),
+  onSubTaskCompleteToggle: PropTypes.func,
+  onSubTaskRemove: PropTypes.func
 };

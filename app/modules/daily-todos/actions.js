@@ -57,3 +57,13 @@ export const addSubTask = (id, text) => ({
   type: DAILY_TODOS_ACTIONS.ADD_SUB_TASK,
   payload: { taskId: id, subTaskId: Date.now(), text, complete: false }
 });
+
+export const toggleCompleteSubTask = (taskId, subTaskId) => ({
+  type: DAILY_TODOS_ACTIONS.TOGGLE_COMPLETE_SUB_TASK,
+  payload: { taskId, subTaskId }
+});
+
+export const removeSubTask = (taskId, subTaskId) => ({
+  type: DAILY_TODOS_ACTIONS.REMOVE_SUB_TASK,
+  payload: { taskId, subTaskId }
+});

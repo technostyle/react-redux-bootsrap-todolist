@@ -4,8 +4,15 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import { Input } from "../../../components/input";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
+import { SubTask } from "./sub-task";
 
-export const SubTaskList = ({ onSubTaskInput, subTaskList }) => {
+export const SubTaskList = ({
+  taskId,
+  onSubTaskInput,
+  subTaskList,
+  onSubTaskCompleteToggle,
+  onSubTaskRemove
+}) => {
   return (
     <Container>
       <Row className="justify-content-md-center">
@@ -17,8 +24,16 @@ export const SubTaskList = ({ onSubTaskInput, subTaskList }) => {
       <Row className="justify-content-md-center">
         <Col md={8}>
           <ListGroup>
-            {subTaskList.map(({ text, id }) => (
-              <ListGroupItem> {text} </ListGroupItem>
+            {subTaskList.map(({ text, id, complete }) => (
+              <SubTask
+                key={id}
+                taskId={taskId}
+                subTaskId={id}
+                text={text}
+                complete={complete}
+                onSubTaskCompleteToggle={onSubTaskCompleteToggle}
+                onSubTaskRemove={onSubTaskRemove}
+              />
             ))}
           </ListGroup>
         </Col>
