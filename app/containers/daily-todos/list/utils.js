@@ -14,25 +14,10 @@ export const filterTodoCreator = activeFilter => {
   }
 };
 
-export const statusSortCreator = activeFilter => {
-  switch (activeFilter) {
-    case FILTER_TYPES.ALL:
-      return (a, b) => {
-        if (a.complete && b.complete) {
-          return 0;
-        } else if (!a.complete && !b.complete) {
-          return 0;
-        } else if (a.complete && !b.complete) {
-          return 1;
-        } else if (!a.complete && b.complete) {
-          return -1;
-        }
-
-        console.error("imposible error");
-      };
-    default:
-      noop;
-  }
+const mapSortTypeToTodoProp = {
+  [SORTING_TYPES.DATE]: "id",
+  [SORTING_TYPES.LEVEL]: "level",
+  [SORTING_TYPES.PRIORITY]: "priority"
 };
 
 const propComparatorCreator = (prop, isIncr) =>
@@ -42,12 +27,9 @@ const propComparatorCreator = (prop, isIncr) =>
 
 export const sortParamsComparator = (sortingParams = {}) => {
   const { type, incrDecr } = sortingParams;
-  if (!type) {
-    return dateSort;
-  }
 
   return propComparatorCreator(
-    type.toLowerCase(),
+    mapSortTypeToTodoProp[type],
     incrDecr === SORTING_TYPES.INCR
   );
 };

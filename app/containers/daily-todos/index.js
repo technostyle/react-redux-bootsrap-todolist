@@ -8,7 +8,8 @@ import {
   toggleComplete,
   setFilter,
   setLevelSorting,
-  setPrioritySorting
+  setPrioritySorting,
+  setDateSorting
 } from "modules/daily-todos/actions";
 import {
   getDailyTodos,
@@ -33,7 +34,8 @@ const mapDispatchToProps = dispatch =>
       toggleComplete,
       setFilter,
       setLevelSorting,
-      setPrioritySorting
+      setPrioritySorting,
+      setDateSorting
     },
     dispatch
   );

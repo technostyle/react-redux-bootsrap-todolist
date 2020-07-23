@@ -39,10 +39,15 @@ export const setTodoPriority = (id, priority) => ({
   payload: { id, priority }
 });
 
+// TODO: combine actions once sort bar is rewritten with hooks
 export const setPrioritySorting = () => ({
   type: DAILY_TODOS_ACTIONS.SET_PRIORITY_SORTING
 });
 
 export const setLevelSorting = () => ({
   type: DAILY_TODOS_ACTIONS.SET_LEVEL_SORTING
+});
+
+export const setDateSorting = () => ({
+  type: DAILY_TODOS_ACTIONS.SET_DATE_SORTING
 });

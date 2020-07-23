@@ -11,15 +11,16 @@ export const DAILY_TODOS_ACTIONS = {
   UPDATE_TODO: "UPDATE_TODO",
   SET_FILTER: "SET_FILTER",
   SET_PRIORITY_SORTING: "SET_PRIORITY_SORTING",
-  SET_LEVEL_SORTING: "SET_LEVEL_SORTING"
+  SET_LEVEL_SORTING: "SET_LEVEL_SORTING",
+  SET_DATE_SORTING: "SET_DATE_SORTING"
 };
 
 const DEFAULT_STATE = {
   todos: [],
   filter: FILTER_TYPES.ALL,
   sorting: {
-    type: null,
-    incrDecr: null
+    type: SORTING_TYPES.DATE,
+    incrDecr: SORTING_TYPES.DECR
   }
 };
 const LOCAL_STORAGE_STATE = readTodos();
@@ -116,6 +117,17 @@ const setPrioritySorting = state => {
   return newState;
 };
 
+const setDateSorting = state => {
+  const incrDecr =
+    get(state, "sorting.incrDecr") === SORTING_TYPES.DECR
+      ? SORTING_TYPES.INCR
+      : SORTING_TYPES.DECR;
+  const newSorting = { type: SORTING_TYPES.DATE, incrDecr };
+  const newState = { ...state, sorting: newSorting };
+  writeTodos(newState);
+  return newState;
+};
+
 export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
     case DAILY_TODOS_ACTIONS.ADD_TODO:
@@ -134,6 +146,8 @@ export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
       return setLevelSorting(state);
     case DAILY_TODOS_ACTIONS.SET_PRIORITY_SORTING:
       return setPrioritySorting(state);
+    case DAILY_TODOS_ACTIONS.SET_DATE_SORTING:
+      return setDateSorting(state);
     default:
       return state;
   }

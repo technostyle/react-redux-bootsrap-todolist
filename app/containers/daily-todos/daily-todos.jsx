@@ -18,6 +18,7 @@ export const DailyTodos = ({
   setFilter,
   setLevelSorting,
   setPrioritySorting,
+  setDateSorting,
   sortingParams
 }) => (
   <Container>
@@ -34,6 +35,7 @@ export const DailyTodos = ({
           onFilterChange={setFilter}
           onLevelSort={setLevelSorting}
           onPrioritySort={setPrioritySorting}
+          onDateSort={setDateSorting}
         />
       </Col>
     </Row>
