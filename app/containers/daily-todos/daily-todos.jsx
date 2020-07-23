@@ -20,6 +20,7 @@ export const DailyTodos = ({
   setLevelSorting,
   setPrioritySorting,
   setDateSorting,
+  addSubTask,
   sortingParams
 }) => (
   <Container>
@@ -55,6 +56,7 @@ export const DailyTodos = ({
           onCompleteTodoToggle={toggleComplete}
           onLevelChange={setTodoLevel}
           onPriorityChange={setTodoPriority}
+          onSubTaskAdd={addSubTask}
           activeFilter={activeFilter}
           sortingParams={sortingParams}
         />

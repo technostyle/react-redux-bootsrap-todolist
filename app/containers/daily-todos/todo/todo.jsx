@@ -11,11 +11,13 @@ import { DoneButton } from "./done-button";
 import { RemoveButton } from "./remove-button";
 import { EditButton } from "./edit-button";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { SubTaskListButton } from "./sub-task-list-buttons";
+import { SubTaskList } from "./sub-task-list";
 
 export class Todo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { editing: false };
+    this.state = { editing: false, subTaskListOpen: false };
     this.onRemove = this.onRemove.bind(this);
     this.onCompleteToggle = this.onCompleteToggle.bind(this);
     this.onPriorityChange = this.onPriorityChange.bind(this);
@@ -23,6 +25,8 @@ export class Todo extends React.Component {
     this.onEditToggle = this.onEditToggle.bind(this);
     this.onEditStart = this.onEditStart.bind(this);
     this.onTodoUpdate = this.onTodoUpdate.bind(this);
+    this.onSubTaskListToggle = this.onSubTaskListToggle.bind(this);
+    this.onSubTaskAdd = this.onSubTaskAdd.bind(this);
   }
 
   onCompleteToggle(event) {
@@ -59,15 +63,29 @@ export class Todo extends React.Component {
     this.setState({ editing: false });
   }
 
+  onSubTaskListToggle() {
+    this.setState({ subTaskListOpen: !this.state.subTaskListOpen });
+  }
+
+  onSubTaskAdd(text) {
+    this.props.onSubTaskAdd(this.props.id, text);
+  }
+
   render() {
-    const { text, complete, level, priority } = this.props;
-    const { editing } = this.state;
+    const { text, complete, level, priority, subTaskList } = this.props;
+    const { editing, subTaskListOpen } = this.state;
 
     return (
       <ListGroup.Item variant={complete ? "success" : "light"}>
         <Container>
           <Row>
-            <Col md={4} onClick={this.onEditStart}>
+            <Col md={1}>
+              <SubTaskListButton
+                isOpen={subTaskListOpen}
+                onClick={this.onSubTaskListToggle}
+              />
+            </Col>
+            <Col md={3} onClick={this.onEditStart}>
               {editing ? (
                 <Input onEnter={this.onTodoUpdate} placeholder={text} />
               ) : (
@@ -114,6 +132,13 @@ export class Todo extends React.Component {
               </OverlayTrigger>
             </Col>
           </Row>
+
+          {subTaskListOpen ? (
+            <SubTaskList
+              onSubTaskInput={this.onSubTaskAdd}
+              subTaskList={subTaskList || []}
+            />
+          ) : null}
         </Container>
       </ListGroup.Item>
     );
@@ -130,5 +155,7 @@ Todo.propTypes = {
   priority: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onLevelChange: PropTypes.func,
   onPriorityChange: PropTypes.func,
-  onTodoUpdate: PropTypes.func
+  onTodoUpdate: PropTypes.func,
+  onSubTaskAdd: PropTypes.func,
+  subTaskList: PropTypes.oneOfType([PropTypes.array, PropTypes.undefined])
 };

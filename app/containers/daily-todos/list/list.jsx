@@ -11,15 +11,15 @@ export const List = ({
   onTodoUpdate,
   onLevelChange,
   onPriorityChange,
+  onSubTaskAdd,
   sortingParams
 }) => (
   <ListGroup>
     {dailyTodos.length
       ? dailyTodos
           .filter(filterTodoCreator(activeFilter))
-          // .sort(statusSortCreator(activeFilter))
           .sort(sortParamsComparator(sortingParams))
-          .map(({ id, text, complete, level, priority }) => (
+          .map(({ id, text, complete, subTaskList, level, priority }) => (
             <Todo
               key={id}
               id={id}
@@ -32,6 +32,8 @@ export const List = ({
               priority={priority}
               onLevelChange={onLevelChange}
               onPriorityChange={onPriorityChange}
+              onSubTaskAdd={onSubTaskAdd}
+              subTaskList={subTaskList}
             />
           ))
       : null}

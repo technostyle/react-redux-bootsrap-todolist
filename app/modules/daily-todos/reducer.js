@@ -12,7 +12,8 @@ export const DAILY_TODOS_ACTIONS = {
   SET_FILTER: "SET_FILTER",
   SET_PRIORITY_SORTING: "SET_PRIORITY_SORTING",
   SET_LEVEL_SORTING: "SET_LEVEL_SORTING",
-  SET_DATE_SORTING: "SET_DATE_SORTING"
+  SET_DATE_SORTING: "SET_DATE_SORTING",
+  ADD_SUB_TASK: "ADD_SUB_TASK"
 };
 
 const DEFAULT_STATE = {
@@ -132,6 +133,22 @@ const setPrioritySorting = state => {
   return newState;
 };
 
+const addSubTask = (state, payload) => {
+  const { taskId, subTaskId, text, complete } = payload;
+  const newTodos = state.todos.map(todo => {
+    if (todo.id !== taskId) {
+      return todo;
+    }
+    const subTaskList = todo.subTaskList || [];
+    const newSubTaskList = [...subTaskList, { id: subTaskId, text, complete }];
+    return { ...todo, subTaskList: newSubTaskList };
+  });
+
+  const newState = { ...state, todos: newTodos };
+  writeTodos(newState);
+  return newState;
+};
+
 const setDateSorting = state => {
   const incrDecr =
     get(state, "sorting.incrDecr") === SORTING_TYPES.DECR
@@ -165,6 +182,8 @@ export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
       return setPrioritySorting(state);
     case DAILY_TODOS_ACTIONS.SET_DATE_SORTING:
       return setDateSorting(state);
+    case DAILY_TODOS_ACTIONS.ADD_SUB_TASK:
+      return addSubTask(state, payload);
     default:
       return state;
   }

@@ -5,7 +5,8 @@ export const addTodo = text => ({
   payload: {
     id: Date.now(),
     text,
-    complete: false
+    complete: false,
+    subTaskList: []
   }
 });
 
@@ -50,4 +51,9 @@ export const setLevelSorting = () => ({
 
 export const setDateSorting = () => ({
   type: DAILY_TODOS_ACTIONS.SET_DATE_SORTING
+});
+
+export const addSubTask = (id, text) => ({
+  type: DAILY_TODOS_ACTIONS.ADD_SUB_TASK,
+  payload: { taskId: id, subTaskId: Date.now(), text, complete: false }
 });
