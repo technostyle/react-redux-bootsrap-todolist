@@ -1,9 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Dropdown } from "react-bootstrap";
+import {
+  ExclamationCircle,
+  LightningFill,
+  Trophy,
+  Bricks
+} from "react-bootstrap-icons";
 
 const oneToTenArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const oneToTenArrayOnStrings = oneToTenArray.map(String);
+
+const ICON_SIZE = 15;
+// TODO: add icon size to theme.js
+const Icon = ({ icon }) => {
+  switch (icon) {
+    case "exclamation":
+      return <ExclamationCircle size={20} />;
+    case "lightning":
+      return <LightningFill size={ICON_SIZE} />;
+    case "trophy":
+      return <Trophy size={ICON_SIZE} />;
+    case "bricks":
+      return <Bricks size={ICON_SIZE} />;
+    default:
+      return null;
+  }
+};
 
 const getVariant = value => {
   if (1 <= value && value <= 2) {
@@ -43,7 +66,7 @@ export class OneToTenSelect extends React.Component {
 
   render() {
     const { value } = this.state;
-    const { label } = this.props;
+    const { icon } = this.props;
 
     return (
       <Dropdown id="one-to-ten-select" onSelect={this.onSelectValue}>
@@ -52,7 +75,7 @@ export class OneToTenSelect extends React.Component {
           size="sm"
           id="one-to-ten-selected-item"
         >
-          {value ? `${label}:  ${value}` : `Set ${label}`}
+          <Icon icon={icon} /> {value || null}
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -70,5 +93,6 @@ export class OneToTenSelect extends React.Component {
 OneToTenSelect.propTypes = {
   label: PropTypes.string,
   value: PropTypes.oneOf([...oneToTenArray, ...oneToTenArrayOnStrings]),
-  onSelect: PropTypes.func
+  onSelect: PropTypes.func,
+  icon: PropTypes.oneOf(["exclamation", "lightning", "trophy", "bricks"])
 };

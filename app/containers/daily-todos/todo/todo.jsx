@@ -56,14 +56,14 @@ export class Todo extends React.Component {
             </Col>
             <Col md={2}>
               <OneToTenSelect
-                label="Lvl"
+                icon="trophy"
                 value={level}
                 onChange={this.onLevelChange}
               />
             </Col>
             <Col md={2}>
               <OneToTenSelect
-                label="Prt"
+                icon="lightning"
                 value={priority}
                 onChange={this.onPriorityChange}
               />
