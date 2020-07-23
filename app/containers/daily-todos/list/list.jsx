@@ -1,6 +1,6 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import { filterTodoCreator, sortTodoCreator } from "./utils";
+import { filterTodoCreator, sortParamsComparator } from "./utils";
 import { Todo } from "../todo";
 
 export const List = ({
@@ -9,13 +9,15 @@ export const List = ({
   onCompleteTodoToggle,
   onRemoveTodo,
   onLevelChange,
-  onPriorityChange
+  onPriorityChange,
+  sortingParams
 }) => (
   <ListGroup>
     {dailyTodos.length
       ? dailyTodos
           .filter(filterTodoCreator(activeFilter))
-          .sort(sortTodoCreator(activeFilter))
+          // .sort(statusSortCreator(activeFilter))
+          .sort(sortParamsComparator(sortingParams))
           .map(({ id, text, complete, level, priority }) => (
             <Todo
               key={id}

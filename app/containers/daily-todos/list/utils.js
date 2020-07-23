@@ -1,5 +1,5 @@
-import { noop } from "lodash";
-import { FILTER_TYPES } from "modules/daily-todos/constants";
+import { get, noop } from "lodash";
+import { FILTER_TYPES, SORTING_TYPES } from "modules/daily-todos/constants";
 
 export const filterTodoCreator = activeFilter => {
   switch (activeFilter) {
@@ -14,7 +14,7 @@ export const filterTodoCreator = activeFilter => {
   }
 };
 
-export const sortTodoCreator = activeFilter => {
+export const statusSortCreator = activeFilter => {
   switch (activeFilter) {
     case FILTER_TYPES.ALL:
       return (a, b) => {
@@ -33,4 +33,21 @@ export const sortTodoCreator = activeFilter => {
     default:
       noop;
   }
+};
+
+const propComparatorCreator = (prop, isIncr) =>
+  isIncr
+    ? (a, b) => get(a, prop) - get(b, prop)
+    : (b, a) => get(a, prop) - get(b, prop);
+
+export const sortParamsComparator = (sortingParams = {}) => {
+  const { type, incrDecr } = sortingParams;
+  if (!type) {
+    return dateSort;
+  }
+
+  return propComparatorCreator(
+    type.toLowerCase(),
+    incrDecr === SORTING_TYPES.INCR
+  );
 };

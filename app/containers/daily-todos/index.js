@@ -6,14 +6,21 @@ import {
   setTodoLevel,
   setTodoPriority,
   toggleComplete,
-  setFilter
+  setFilter,
+  setLevelSorting,
+  setPrioritySorting
 } from "modules/daily-todos/actions";
-import { getDailyTodos, getActiveFilter } from "modules/daily-todos/selectors";
+import {
+  getDailyTodos,
+  getActiveFilter,
+  getSortingParams
+} from "modules/daily-todos/selectors";
 import { DailyTodos as Component } from "./daily-todos";
 
 const mapStateToProps = state => ({
   dailyTodos: getDailyTodos(state),
-  activeFilter: getActiveFilter(state)
+  activeFilter: getActiveFilter(state),
+  sortingParams: getSortingParams(state)
 });
 
 const mapDispatchToProps = dispatch =>
@@ -24,7 +31,9 @@ const mapDispatchToProps = dispatch =>
       setTodoLevel,
       setTodoPriority,
       toggleComplete,
-      setFilter
+      setFilter,
+      setLevelSorting,
+      setPrioritySorting
     },
     dispatch
   );

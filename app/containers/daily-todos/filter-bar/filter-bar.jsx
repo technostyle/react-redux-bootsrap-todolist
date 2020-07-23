@@ -1,33 +1,27 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
-import ToggleButton from "react-bootstrap/ToggleButton";
-import { FILTER_TYPES } from "modules/daily-todos/constants";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { StatusFilter } from "./status-filter";
+import { SortBar } from "./sort-bar";
 
-export const FilterBar = ({ activeFilter, onFilterChange }) => (
-  <Navbar>
-    <ToggleButtonGroup
-      type="checkbox"
-      value={activeFilter}
-      onChange={onFilterChange}
-    >
-      <ToggleButton size="sm" variant="outline-dark" value={FILTER_TYPES.ALL}>
-        ALL
-      </ToggleButton>
-      <ToggleButton
-        size="sm"
-        variant="outline-dark"
-        value={FILTER_TYPES.UNCOMPLETE}
-      >
-        TODO
-      </ToggleButton>
-      <ToggleButton
-        size="sm"
-        variant="outline-dark"
-        value={FILTER_TYPES.COMPLETE}
-      >
-        DONE
-      </ToggleButton>
-    </ToggleButtonGroup>
-  </Navbar>
+export const FilterBar = ({
+  activeFilter,
+  onFilterChange,
+  onLevelSort,
+  onPrioritySort
+}) => (
+  <Container>
+    <Row>
+      <Col>
+        <StatusFilter
+          activeFilter={activeFilter}
+          onFilterChange={onFilterChange}
+        />
+      </Col>
+      <Col>
+        <SortBar onLevelSort={onLevelSort} onPrioritySort={onPrioritySort} />
+      </Col>
+    </Row>
+  </Container>
 );

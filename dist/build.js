@@ -426,7 +426,10 @@ var DailyTodos = function DailyTodos(_ref) {
       setTodoLevel = _ref.setTodoLevel,
       setTodoPriority = _ref.setTodoPriority,
       activeFilter = _ref.activeFilter,
-      setFilter = _ref.setFilter;
+      setFilter = _ref.setFilter,
+      setLevelSorting = _ref.setLevelSorting,
+      setPrioritySorting = _ref.setPrioritySorting,
+      sortingParams = _ref.sortingParams;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "justify-content-md-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -440,7 +443,9 @@ var DailyTodos = function DailyTodos(_ref) {
     md: 8
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_filter_bar__WEBPACK_IMPORTED_MODULE_7__["FilterBar"], {
     activeFilter: activeFilter,
-    onFilterChange: setFilter
+    onFilterChange: setFilter,
+    onLevelSort: setLevelSorting,
+    onPrioritySort: setPrioritySorting
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "justify-content-md-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -457,7 +462,8 @@ var DailyTodos = function DailyTodos(_ref) {
     onCompleteTodoToggle: toggleComplete,
     onLevelChange: setTodoLevel,
     onPriorityChange: setTodoPriority,
-    activeFilter: activeFilter
+    activeFilter: activeFilter,
+    sortingParams: sortingParams
   }))));
 };
 
@@ -475,6 +481,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterBar", function() { return FilterBar; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
+/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var _status_filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./status-filter */ "./app/containers/daily-todos/filter-bar/status-filter.jsx");
+/* harmony import */ var _sort_bar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sort-bar */ "./app/containers/daily-todos/filter-bar/sort-bar.jsx");
+
+
+
+
+
+
+var FilterBar = function FilterBar(_ref) {
+  var activeFilter = _ref.activeFilter,
+      onFilterChange = _ref.onFilterChange,
+      onLevelSort = _ref.onLevelSort,
+      onPrioritySort = _ref.onPrioritySort;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_2__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_status_filter__WEBPACK_IMPORTED_MODULE_4__["StatusFilter"], {
+    activeFilter: activeFilter,
+    onFilterChange: onFilterChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sort_bar__WEBPACK_IMPORTED_MODULE_5__["SortBar"], {
+    onLevelSort: onLevelSort,
+    onPrioritySort: onPrioritySort
+  }))));
+};
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/filter-bar/index.js":
+/*!********************************************************!*\
+  !*** ./app/containers/daily-todos/filter-bar/index.js ***!
+  \********************************************************/
+/*! exports provided: FilterBar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _filter_bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filter-bar */ "./app/containers/daily-todos/filter-bar/filter-bar.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilterBar", function() { return _filter_bar__WEBPACK_IMPORTED_MODULE_0__["FilterBar"]; });
+
+
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/filter-bar/sort-bar.jsx":
+/*!************************************************************!*\
+  !*** ./app/containers/daily-todos/filter-bar/sort-bar.jsx ***!
+  \************************************************************/
+/*! exports provided: SortBar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortBar", function() { return SortBar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+
+
+var SortBar = function SortBar(_ref) {
+  var onLevelSort = _ref.onLevelSort,
+      onPrioritySort = _ref.onPrioritySort;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], {
+    className: "mb-3",
+    "aria-label": "Toolbar with Button groups"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
+    className: "mr-2",
+    "aria-label": "First group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    variant: "secondary",
+    onClick: onLevelSort
+  }, "Lvl sort"), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    variant: "secondary",
+    onClick: onPrioritySort
+  }, "Prt sort"), ' '));
+};
+
+/***/ }),
+
+/***/ "./app/containers/daily-todos/filter-bar/status-filter.jsx":
+/*!*****************************************************************!*\
+  !*** ./app/containers/daily-todos/filter-bar/status-filter.jsx ***!
+  \*****************************************************************/
+/*! exports provided: StatusFilter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatusFilter", function() { return StatusFilter; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Navbar */ "./node_modules/react-bootstrap/esm/Navbar.js");
 /* harmony import */ var react_bootstrap_ToggleButtonGroup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/ToggleButtonGroup */ "./node_modules/react-bootstrap/esm/ToggleButtonGroup.js");
 /* harmony import */ var react_bootstrap_ToggleButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/ToggleButton */ "./node_modules/react-bootstrap/esm/ToggleButton.js");
@@ -484,7 +580,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var FilterBar = function FilterBar(_ref) {
+var StatusFilter = function StatusFilter(_ref) {
   var activeFilter = _ref.activeFilter,
       onFilterChange = _ref.onFilterChange;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ToggleButtonGroup__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -505,22 +601,6 @@ var FilterBar = function FilterBar(_ref) {
     value: modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPES"].COMPLETE
   }, "DONE")));
 };
-
-/***/ }),
-
-/***/ "./app/containers/daily-todos/filter-bar/index.js":
-/*!********************************************************!*\
-  !*** ./app/containers/daily-todos/filter-bar/index.js ***!
-  \********************************************************/
-/*! exports provided: FilterBar */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _filter_bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filter-bar */ "./app/containers/daily-todos/filter-bar/filter-bar.jsx");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilterBar", function() { return _filter_bar__WEBPACK_IMPORTED_MODULE_0__["FilterBar"]; });
-
-
 
 /***/ }),
 
@@ -548,7 +628,8 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   return {
     dailyTodos: Object(modules_daily_todos_selectors__WEBPACK_IMPORTED_MODULE_3__["getDailyTodos"])(state),
-    activeFilter: Object(modules_daily_todos_selectors__WEBPACK_IMPORTED_MODULE_3__["getActiveFilter"])(state)
+    activeFilter: Object(modules_daily_todos_selectors__WEBPACK_IMPORTED_MODULE_3__["getActiveFilter"])(state),
+    sortingParams: Object(modules_daily_todos_selectors__WEBPACK_IMPORTED_MODULE_3__["getSortingParams"])(state)
   };
 };
 
@@ -559,7 +640,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     setTodoLevel: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setTodoLevel"],
     setTodoPriority: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setTodoPriority"],
     toggleComplete: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["toggleComplete"],
-    setFilter: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setFilter"]
+    setFilter: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setFilter"],
+    setLevelSorting: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setLevelSorting"],
+    setPrioritySorting: modules_daily_todos_actions__WEBPACK_IMPORTED_MODULE_2__["setPrioritySorting"]
   }, dispatch);
 };
 
@@ -608,8 +691,10 @@ var List = function List(_ref) {
       onCompleteTodoToggle = _ref.onCompleteTodoToggle,
       onRemoveTodo = _ref.onRemoveTodo,
       onLevelChange = _ref.onLevelChange,
-      onPriorityChange = _ref.onPriorityChange;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_1__["default"], null, dailyTodos.length ? dailyTodos.filter(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["filterTodoCreator"])(activeFilter)).sort(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["sortTodoCreator"])(activeFilter)).map(function (_ref2) {
+      onPriorityChange = _ref.onPriorityChange,
+      sortingParams = _ref.sortingParams;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_1__["default"], null, dailyTodos.length ? dailyTodos.filter(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["filterTodoCreator"])(activeFilter)) // .sort(statusSortCreator(activeFilter))
+  .sort(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["sortParamsComparator"])(sortingParams)).map(function (_ref2) {
     var id = _ref2.id,
         text = _ref2.text,
         complete = _ref2.complete,
@@ -636,13 +721,14 @@ var List = function List(_ref) {
 /*!**************************************************!*\
   !*** ./app/containers/daily-todos/list/utils.js ***!
   \**************************************************/
-/*! exports provided: filterTodoCreator, sortTodoCreator */
+/*! exports provided: filterTodoCreator, statusSortCreator, sortParamsComparator */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterTodoCreator", function() { return filterTodoCreator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortTodoCreator", function() { return sortTodoCreator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "statusSortCreator", function() { return statusSortCreator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortParamsComparator", function() { return sortParamsComparator; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! modules/daily-todos/constants */ "./app/modules/daily-todos/constants.js");
@@ -673,7 +759,7 @@ var filterTodoCreator = function filterTodoCreator(activeFilter) {
       };
   }
 };
-var sortTodoCreator = function sortTodoCreator(activeFilter) {
+var statusSortCreator = function statusSortCreator(activeFilter) {
   switch (activeFilter) {
     case modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPES"].ALL:
       return function (a, b) {
@@ -693,6 +779,26 @@ var sortTodoCreator = function sortTodoCreator(activeFilter) {
     default:
       lodash__WEBPACK_IMPORTED_MODULE_0__["noop"];
   }
+};
+
+var propComparatorCreator = function propComparatorCreator(prop, isIncr) {
+  return isIncr ? function (a, b) {
+    return Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(a, prop) - Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(b, prop);
+  } : function (b, a) {
+    return Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(a, prop) - Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(b, prop);
+  };
+};
+
+var sortParamsComparator = function sortParamsComparator() {
+  var sortingParams = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var type = sortingParams.type,
+      incrDecr = sortingParams.incrDecr;
+
+  if (!type) {
+    return dateSort;
+  }
+
+  return propComparatorCreator(type.toLowerCase(), incrDecr === modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].INCR);
 };
 
 /***/ }),
@@ -1001,7 +1107,7 @@ var writeTodos = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["flow"])(safeJsonStr
 /*!********************************************!*\
   !*** ./app/modules/daily-todos/actions.js ***!
   \********************************************/
-/*! exports provided: addTodo, toggleComplete, removeTodo, updateTodo, setFilter, setTodoLevel, setTodoPriority */
+/*! exports provided: addTodo, toggleComplete, removeTodo, updateTodo, setFilter, setTodoLevel, setTodoPriority, setPrioritySorting, setLevelSorting */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1013,6 +1119,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setFilter", function() { return setFilter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTodoLevel", function() { return setTodoLevel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setTodoPriority", function() { return setTodoPriority; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setPrioritySorting", function() { return setPrioritySorting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setLevelSorting", function() { return setLevelSorting; });
 /* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducer */ "./app/modules/daily-todos/reducer.js");
 
 var addTodo = function addTodo(text) {
@@ -1067,6 +1175,16 @@ var setTodoPriority = function setTodoPriority(id, priority) {
     }
   };
 };
+var setPrioritySorting = function setPrioritySorting() {
+  return {
+    type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_PRIORITY_SORTING
+  };
+};
+var setLevelSorting = function setLevelSorting() {
+  return {
+    type: _reducer__WEBPACK_IMPORTED_MODULE_0__["DAILY_TODOS_ACTIONS"].SET_LEVEL_SORTING
+  };
+};
 
 /***/ }),
 
@@ -1074,16 +1192,23 @@ var setTodoPriority = function setTodoPriority(id, priority) {
 /*!**********************************************!*\
   !*** ./app/modules/daily-todos/constants.js ***!
   \**********************************************/
-/*! exports provided: FILTER_TYPES */
+/*! exports provided: FILTER_TYPES, SORTING_TYPES */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FILTER_TYPES", function() { return FILTER_TYPES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SORTING_TYPES", function() { return SORTING_TYPES; });
 var FILTER_TYPES = {
   ALL: "ALL",
   COMPLETE: "COMPETE",
   UNCOMPLETE: "UNCOMPLETE"
+};
+var SORTING_TYPES = {
+  LEVEL: 'LEVEL',
+  PRIORITY: 'PRIORITY',
+  INCR: 'INCR',
+  DECR: 'DECR'
 };
 
 /***/ }),
@@ -1099,8 +1224,10 @@ var FILTER_TYPES = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAILY_TODOS_ACTIONS", function() { return DAILY_TODOS_ACTIONS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dailyTodosReducer", function() { return dailyTodosReducer; });
-/* harmony import */ var data_handler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! data-handler */ "./app/data-handler/index.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./app/modules/daily-todos/constants.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var data_handler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data-handler */ "./app/data-handler/index.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./app/modules/daily-todos/constants.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1129,6 +1256,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var DAILY_TODOS_ACTIONS = {
   ADD_TODO: "ADD_TODO",
   REMOVE_TODO: "REMOVE_TODO",
@@ -1136,13 +1264,19 @@ var DAILY_TODOS_ACTIONS = {
   SET_TODO_PRIORITY: "SET_TODO_PRIORITY",
   TOGGLE_COMPLETE: "TOGGLE_COMPLETE",
   UPDATE_TODO: "UPDATE_TODO",
-  SET_FILTER: "SET_FILTER"
+  SET_FILTER: "SET_FILTER",
+  SET_PRIORITY_SORTING: 'SET_PRIORITY_SORTING',
+  SET_LEVEL_SORTING: 'SET_LEVEL_SORTING'
 };
 var DEFAULT_STATE = {
   todos: [],
-  filter: _constants__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPES"].ALL
+  filter: _constants__WEBPACK_IMPORTED_MODULE_2__["FILTER_TYPES"].ALL,
+  sorting: {
+    type: null,
+    incrDecr: null
+  }
 };
-var LOCAL_STORAGE_STATE = Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["readTodos"])();
+var LOCAL_STORAGE_STATE = Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["readTodos"])();
 var INITIAL_STATE = LOCAL_STORAGE_STATE || DEFAULT_STATE;
 
 var addTodo = function addTodo(state, payload) {
@@ -1150,7 +1284,7 @@ var addTodo = function addTodo(state, payload) {
     todos: [].concat(_toConsumableArray(state.todos), [payload])
   });
 
-  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
   return newState;
 };
 
@@ -1161,7 +1295,7 @@ var removeTodo = function removeTodo(state, payload) {
     })
   });
 
-  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
   return newState;
 };
 
@@ -1181,7 +1315,7 @@ var toggleComplete = function toggleComplete(state, payload) {
     todos: newTodos
   });
 
-  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
   return newState;
 };
 
@@ -1202,7 +1336,7 @@ var setTodoLevel = function setTodoLevel(state, payload) {
     todos: newTodos
   });
 
-  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
   return newState;
 };
 
@@ -1223,7 +1357,7 @@ var setTodoPriority = function setTodoPriority(state, payload) {
     todos: newTodos
   });
 
-  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
   return newState;
 };
 
@@ -1240,7 +1374,37 @@ var setFilter = function setFilter(state, payload) {
     filter: cur
   });
 
-  Object(data_handler__WEBPACK_IMPORTED_MODULE_0__["writeTodos"])(newState);
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
+  return newState;
+};
+
+var setLevelSorting = function setLevelSorting(state) {
+  var incrDecr = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(state, 'sorting.incrDecr') === _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR ? _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].INCR : _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR;
+  var newSorting = {
+    type: _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].LEVEL,
+    incrDecr: incrDecr
+  };
+
+  var newState = _objectSpread(_objectSpread({}, state), {}, {
+    sorting: newSorting
+  });
+
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
+  return newState;
+};
+
+var setPrioritySorting = function setPrioritySorting(state) {
+  var incrDecr = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(state, 'sorting.incrDecr') === _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR ? _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].INCR : _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].DECR;
+  var newSorting = {
+    type: _constants__WEBPACK_IMPORTED_MODULE_2__["SORTING_TYPES"].PRIORITY,
+    incrDecr: incrDecr
+  };
+
+  var newState = _objectSpread(_objectSpread({}, state), {}, {
+    sorting: newSorting
+  });
+
+  Object(data_handler__WEBPACK_IMPORTED_MODULE_1__["writeTodos"])(newState);
   return newState;
 };
 
@@ -1270,6 +1434,12 @@ var dailyTodosReducer = function dailyTodosReducer() {
     case DAILY_TODOS_ACTIONS.SET_FILTER:
       return setFilter(state, payload);
 
+    case DAILY_TODOS_ACTIONS.SET_LEVEL_SORTING:
+      return setLevelSorting(state);
+
+    case DAILY_TODOS_ACTIONS.SET_PRIORITY_SORTING:
+      return setPrioritySorting(state);
+
     default:
       return state;
   }
@@ -1281,13 +1451,14 @@ var dailyTodosReducer = function dailyTodosReducer() {
 /*!**********************************************!*\
   !*** ./app/modules/daily-todos/selectors.js ***!
   \**********************************************/
-/*! exports provided: getDailyTodos, getActiveFilter */
+/*! exports provided: getDailyTodos, getActiveFilter, getSortingParams */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDailyTodos", function() { return getDailyTodos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getActiveFilter", function() { return getActiveFilter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSortingParams", function() { return getSortingParams; });
 /* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reselect */ "./node_modules/reselect/es/index.js");
 /* harmony import */ var utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils */ "./app/utils/index.js");
 
@@ -1295,6 +1466,7 @@ __webpack_require__.r(__webpack_exports__);
 var getDailyTodosDomain = Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])("dailyTodos", {});
 var getDailyTodos = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getDailyTodosDomain, Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])("todos", []));
 var getActiveFilter = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getDailyTodosDomain, Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])("filter", null));
+var getSortingParams = Object(reselect__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(getDailyTodosDomain, Object(utils__WEBPACK_IMPORTED_MODULE_1__["prop"])('sorting'));
 
 /***/ }),
 

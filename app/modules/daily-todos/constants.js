@@ -3,3 +3,10 @@ export const FILTER_TYPES = {
   COMPLETE: "COMPETE",
   UNCOMPLETE: "UNCOMPLETE"
 };
+
+export const SORTING_TYPES = {
+  LEVEL: "LEVEL",
+  PRIORITY: "PRIORITY",
+  INCR: "INCR",
+  DECR: "DECR"
+};

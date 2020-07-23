@@ -12,3 +12,8 @@ export const getActiveFilter = createSelector(
   getDailyTodosDomain,
   prop("filter", null)
 );
+
+export const getSortingParams = createSelector(
+  getDailyTodosDomain,
+  prop("sorting")
+);

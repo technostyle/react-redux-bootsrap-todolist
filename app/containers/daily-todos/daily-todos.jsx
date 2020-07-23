@@ -15,7 +15,10 @@ export const DailyTodos = ({
   setTodoLevel,
   setTodoPriority,
   activeFilter,
-  setFilter
+  setFilter,
+  setLevelSorting,
+  setPrioritySorting,
+  sortingParams
 }) => (
   <Container>
     <Row className="justify-content-md-center">
@@ -25,7 +28,13 @@ export const DailyTodos = ({
     </Row>
     <Row className="justify-content-md-center">
       <Col md={8}>
-        <FilterBar activeFilter={activeFilter} onFilterChange={setFilter} />
+        {/*  TODO: rename to just Bar or something */}
+        <FilterBar
+          activeFilter={activeFilter}
+          onFilterChange={setFilter}
+          onLevelSort={setLevelSorting}
+          onPrioritySort={setPrioritySorting}
+        />
       </Col>
     </Row>
     <Row className="justify-content-md-center">
@@ -42,6 +51,7 @@ export const DailyTodos = ({
           onLevelChange={setTodoLevel}
           onPriorityChange={setTodoPriority}
           activeFilter={activeFilter}
+          sortingParams={sortingParams}
         />
       </Col>
     </Row>

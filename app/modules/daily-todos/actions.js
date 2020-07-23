@@ -38,3 +38,11 @@ export const setTodoPriority = (id, priority) => ({
   type: DAILY_TODOS_ACTIONS.SET_TODO_PRIORITY,
   payload: { id, priority }
 });
+
+export const setPrioritySorting = () => ({
+  type: DAILY_TODOS_ACTIONS.SET_PRIORITY_SORTING
+});
+
+export const setLevelSorting = () => ({
+  type: DAILY_TODOS_ACTIONS.SET_LEVEL_SORTING
+});
