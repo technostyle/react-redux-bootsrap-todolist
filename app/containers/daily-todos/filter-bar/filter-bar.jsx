@@ -10,7 +10,8 @@ export const FilterBar = ({
   onFilterChange,
   onLevelSort,
   onPrioritySort,
-  onDateSort
+  onDateSort,
+  sortingParams
 }) => (
   <Container>
     <Row>
@@ -25,6 +26,7 @@ export const FilterBar = ({
           onLevelSort={onLevelSort}
           onPrioritySort={onPrioritySort}
           onDateSort={onDateSort}
+          sortingParams={sortingParams}
         />
       </Col>
     </Row>

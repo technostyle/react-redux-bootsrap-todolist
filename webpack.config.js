@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: 'dist',
+    contentBase: "dist",
     port: 9000
   },
   resolve: {

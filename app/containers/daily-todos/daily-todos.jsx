@@ -36,6 +36,7 @@ export const DailyTodos = ({
           onLevelSort={setLevelSorting}
           onPrioritySort={setPrioritySorting}
           onDateSort={setDateSorting}
+          sortingParams={sortingParams}
         />
       </Col>
     </Row>

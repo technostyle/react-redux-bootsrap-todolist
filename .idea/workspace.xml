@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/build.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/filter-bar/filter-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/filter-bar/filter-bar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/filter-bar/sort-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/filter-bar/sort-bar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,17 +47,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595495885103">
+    <state x="0" y="27" width="704" height="513" key="find.popup" timestamp="1595497010757">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595495885103" />
+    <state x="0" y="27" width="704" height="513" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595497010757" />
     <state x="144" y="124" key="run.anything.popup" timestamp="1595494238707">
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="144" y="124" key="run.anything.popup/0.27.960.513@0.27.960.513" timestamp="1595494238707" />
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595495559821">
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595496780026">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595495559821" />
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595496780026" />
   </component>
 </project>
