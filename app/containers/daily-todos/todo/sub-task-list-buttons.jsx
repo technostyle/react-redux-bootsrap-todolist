@@ -1,9 +1,15 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { ChevronDown, ChevronUp } from "react-bootstrap-icons";
+import { ChevronDown, ChevronUp, Plus } from "react-bootstrap-icons";
 
-export const SubTaskListButton = ({ onClick, isOpen }) => (
-  <Button variant="secondary-outline" size="sm" onClick={onClick}>
-    {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+const Chevron = ({ isOpen }) =>
+  isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />;
+export const SubTaskListButton = ({ hasSubTask, onClick, isOpen }) => (
+  <Button
+    variant={hasSubTask ? "outline-secondary" : ""}
+    size="sm"
+    onClick={onClick}
+  >
+    {hasSubTask ? <Chevron isOpen={isOpen} /> : <Plus size={20} color="blue" />}
   </Button>
 );

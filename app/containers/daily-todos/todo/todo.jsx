@@ -90,6 +90,7 @@ export class Todo extends React.Component {
           <Row>
             <Col md={1}>
               <SubTaskListButton
+                hasSubTask={!!subTaskList.length}
                 isOpen={subTaskListOpen}
                 onClick={this.onSubTaskListToggle}
               />
