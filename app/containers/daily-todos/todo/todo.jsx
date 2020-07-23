@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { get } from "lodash";
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -90,7 +91,7 @@ export class Todo extends React.Component {
           <Row>
             <Col md={1}>
               <SubTaskListButton
-                hasSubTask={!!subTaskList.length}
+                hasSubTask={!!get(subTaskList, "length")}
                 isOpen={subTaskListOpen}
                 onClick={this.onSubTaskListToggle}
               />

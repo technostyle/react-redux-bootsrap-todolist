@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, Plus } from "react-bootstrap-icons";
 
 const Chevron = ({ isOpen }) =>
   isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />;
+
 export const SubTaskListButton = ({ hasSubTask, onClick, isOpen }) => (
   <Button
     variant={hasSubTask ? "outline-secondary" : ""}

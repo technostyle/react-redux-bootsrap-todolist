@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list-buttons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list-buttons.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +37,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595478116082</updated>
       <workItem from="1595478117861" duration="4784000" />
-      <workItem from="1595530539190" duration="1318000" />
+      <workItem from="1595530539190" duration="1594000" />
     </task>
     <servers />
   </component>
