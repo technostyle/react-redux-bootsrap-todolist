@@ -4,6 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { OneToTenSelect } from "components/one-to-ten-select";
 import { UndoButton } from "./undo-button";
 import { DoneButton } from "./done-button";
 import { RemoveButton } from "./remove-button";
@@ -32,7 +33,7 @@ export class Todo extends React.Component {
       <ListGroup.Item variant={complete ? "success" : "light"}>
         <Container>
           <Row>
-            <Col md={6}>{text}</Col>
+            <Col md={3}>{text}</Col>
             <Col md={2}>
               {complete ? (
                 <UndoButton onClick={this.onCompleteToggle} />
@@ -42,6 +43,12 @@ export class Todo extends React.Component {
             </Col>
             <Col md={2}>
               <RemoveButton onClick={this.onRemove} />
+            </Col>
+            <Col md={2}>
+              <OneToTenSelect label="Lvl" value={1} onChange={console.log} />
+            </Col>
+            <Col md={2}>
+              <OneToTenSelect label="Imp" value={1} onChange={console.log} />
             </Col>
           </Row>
         </Container>
