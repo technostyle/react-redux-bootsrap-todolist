@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup, ButtonToolbar } from "react-bootstrap";
+import { Button, ButtonGroup, ButtonToolbar, Navbar } from "react-bootstrap";
 import { ArrowDown, ArrowUp } from "react-bootstrap-icons";
 import { SORTING_TYPES } from "modules/daily-todos/constants";
 
@@ -20,21 +20,23 @@ export const SortBar = ({
 }) => {
   const { type, incrDecr } = sortingParams || {};
   return (
-    <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
-      <ButtonGroup className="mr-2" aria-label="First group">
-        <Button variant="secondary" onClick={onDateSort}>
-          {type === SORTING_TYPES.DATE && <Arrow incrDecr={incrDecr} />}
-          <span>Date</span>
-        </Button>
-        <Button variant="secondary" onClick={onLevelSort}>
-          {type === SORTING_TYPES.LEVEL && <Arrow incrDecr={incrDecr} />}
-          Lvl
-        </Button>{" "}
-        <Button variant="secondary" onClick={onPrioritySort}>
-          {type === SORTING_TYPES.PRIORITY && <Arrow incrDecr={incrDecr} />}
-          Prt
-        </Button>{" "}
-      </ButtonGroup>
-    </ButtonToolbar>
+    <Navbar>
+      <ButtonToolbar className="mb-2" aria-label="Toolbar with Button groups">
+        <ButtonGroup className="mr-2" aria-label="First group">
+          <Button size="sm" variant="secondary" onClick={onDateSort}>
+            {type === SORTING_TYPES.DATE && <Arrow incrDecr={incrDecr} />}
+            <span>Date</span>
+          </Button>
+          <Button size="sm" variant="secondary" onClick={onLevelSort}>
+            {type === SORTING_TYPES.LEVEL && <Arrow incrDecr={incrDecr} />}
+            Level
+          </Button>{" "}
+          <Button size="sm" variant="secondary" onClick={onPrioritySort}>
+            {type === SORTING_TYPES.PRIORITY && <Arrow incrDecr={incrDecr} />}
+            Priority
+          </Button>{" "}
+        </ButtonGroup>
+      </ButtonToolbar>
+    </Navbar>
   );
 };
