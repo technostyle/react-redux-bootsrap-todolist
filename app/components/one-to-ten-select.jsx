@@ -69,7 +69,12 @@ export class OneToTenSelect extends React.Component {
     const { icon } = this.props;
 
     return (
-      <Dropdown id="one-to-ten-select" onSelect={this.onSelectValue}>
+      //  ...this.props is for react-bootstrap tooltip
+      <Dropdown
+        id="one-to-ten-select"
+        onSelect={this.onSelectValue}
+        {...this.props}
+      >
         <Dropdown.Toggle
           variant={getVariant(value)}
           size="sm"

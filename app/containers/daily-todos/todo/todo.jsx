@@ -10,6 +10,7 @@ import { UndoButton } from "./undo-button";
 import { DoneButton } from "./done-button";
 import { RemoveButton } from "./remove-button";
 import { EditButton } from "./edit-button";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 export class Todo extends React.Component {
   constructor(props) {
@@ -87,18 +88,30 @@ export class Todo extends React.Component {
               <RemoveButton onClick={this.onRemove} />
             </Col>
             <Col md={2}>
-              <OneToTenSelect
-                icon="trophy"
-                value={level}
-                onChange={this.onLevelChange}
-              />
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<Tooltip id={"level-select-tooltip"}>Level</Tooltip>}
+              >
+                <OneToTenSelect
+                  icon="trophy"
+                  value={level}
+                  onChange={this.onLevelChange}
+                />
+              </OverlayTrigger>
             </Col>
             <Col md={2}>
-              <OneToTenSelect
-                icon="lightning"
-                value={priority}
-                onChange={this.onPriorityChange}
-              />
+              <OverlayTrigger
+                placement="bottom"
+                overlay={
+                  <Tooltip id={"level-select-tooltip"}>Priority</Tooltip>
+                }
+              >
+                <OneToTenSelect
+                  icon="lightning"
+                  value={priority}
+                  onChange={this.onPriorityChange}
+                />
+              </OverlayTrigger>
             </Col>
           </Row>
         </Container>
