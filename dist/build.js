@@ -771,7 +771,7 @@ var filterTodoCreator = function filterTodoCreator(activeFilter) {
       };
   }
 };
-var mapSortTypeToTodoProp = (_mapSortTypeToTodoPro = {}, _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].DATE, 'id'), _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].LEVEL, 'level'), _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].PRIORITY, 'priority'), _mapSortTypeToTodoPro);
+var mapSortTypeToTodoProp = (_mapSortTypeToTodoPro = {}, _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].DATE, "id"), _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].LEVEL, "level"), _defineProperty(_mapSortTypeToTodoPro, modules_daily_todos_constants__WEBPACK_IMPORTED_MODULE_1__["SORTING_TYPES"].PRIORITY, "priority"), _mapSortTypeToTodoPro);
 
 var propComparatorCreator = function propComparatorCreator(prop, isIncr) {
   return isIncr ? function (a, b) {
@@ -1201,7 +1201,7 @@ var FILTER_TYPES = {
 var SORTING_TYPES = {
   LEVEL: "LEVEL",
   PRIORITY: "PRIORITY",
-  DATE: 'DATE',
+  DATE: "DATE",
   INCR: "INCR",
   DECR: "DECR"
 };

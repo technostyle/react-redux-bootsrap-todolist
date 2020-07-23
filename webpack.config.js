@@ -25,6 +25,10 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: 'dist',
+    port: 9000
+  },
   resolve: {
     modules: ["app", "node_modules"],
     extensions: [".js", ".jsx"]

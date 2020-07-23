@@ -63,7 +63,7 @@ export class Todo extends React.Component {
             </Col>
             <Col md={2}>
               <OneToTenSelect
-                label="Imp"
+                label="Prt"
                 value={priority}
                 onChange={this.onPriorityChange}
               />
