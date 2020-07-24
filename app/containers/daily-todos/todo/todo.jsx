@@ -173,7 +173,7 @@ Todo.propTypes = {
   onPriorityChange: PropTypes.func,
   onTodoUpdate: PropTypes.func,
   onSubTaskAdd: PropTypes.func,
-  subTaskList: PropTypes.oneOfType([PropTypes.array, PropTypes.undefined]),
+  subTaskList: PropTypes.any,
   onSubTaskCompleteToggle: PropTypes.func,
   onSubTaskRemove: PropTypes.func
 };
