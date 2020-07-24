@@ -1,5 +1,5 @@
 import { get } from "lodash";
-import { readTodos, writeTodos } from "data-handler";
+import { readTodos } from "data-handler";
 import { FILTER_TYPES, SORTING_TYPES } from "./constants";
 
 export const DAILY_TODOS_ACTIONS = {
@@ -31,7 +31,6 @@ const INITIAL_STATE = LOCAL_STORAGE_STATE || DEFAULT_STATE;
 
 const addTodo = (state, payload) => {
   const newState = { ...state, todos: [...state.todos, payload] };
-  writeTodos(newState);
   return newState;
 };
 
@@ -40,7 +39,6 @@ const removeTodo = (state, payload) => {
     ...state,
     todos: state.todos.filter(todo => todo.id !== payload)
   };
-  writeTodos(newState);
   return newState;
 };
 
@@ -55,7 +53,6 @@ const updateTodo = (state, payload) => {
   });
 
   const newState = { ...state, todos: newTodos };
-  writeTodos(newState);
   return newState;
 };
 
@@ -70,7 +67,6 @@ const toggleComplete = (state, payload) => {
   });
 
   const newState = { ...state, todos: newTodos };
-  writeTodos(newState);
   return newState;
 };
 
@@ -84,7 +80,6 @@ const setTodoLevel = (state, payload) => {
   });
 
   const newState = { ...state, todos: newTodos };
-  writeTodos(newState);
   return newState;
 };
 
@@ -98,7 +93,6 @@ const setTodoPriority = (state, payload) => {
   });
 
   const newState = { ...state, todos: newTodos };
-  writeTodos(newState);
   return newState;
 };
 
@@ -109,7 +103,6 @@ const setFilter = (state, payload) => {
   }
 
   const newState = { ...state, filter: cur };
-  writeTodos(newState);
   return newState;
 };
 
@@ -120,7 +113,6 @@ const setLevelSorting = state => {
       : SORTING_TYPES.DECR;
   const newSorting = { type: SORTING_TYPES.LEVEL, incrDecr };
   const newState = { ...state, sorting: newSorting };
-  writeTodos(newState);
   return newState;
 };
 
@@ -131,7 +123,6 @@ const setPrioritySorting = state => {
       : SORTING_TYPES.DECR;
   const newSorting = { type: SORTING_TYPES.PRIORITY, incrDecr };
   const newState = { ...state, sorting: newSorting };
-  writeTodos(newState);
   return newState;
 };
 
@@ -147,7 +138,6 @@ const addSubTask = (state, payload) => {
   });
 
   const newState = { ...state, todos: newTodos };
-  writeTodos(newState);
   return newState;
 };
 
@@ -171,7 +161,6 @@ const toggleCompleteSubTask = (state, payload) => {
   });
 
   const newState = { ...state, todos: newTodos };
-  writeTodos(newState);
   return newState;
 };
 
@@ -191,7 +180,6 @@ const removeSubTask = (state, payload) => {
   });
 
   const newState = { ...state, todos: newTodos };
-  writeTodos(newState);
   return newState;
 };
 
@@ -202,7 +190,6 @@ const setDateSorting = state => {
       : SORTING_TYPES.DECR;
   const newSorting = { type: SORTING_TYPES.DATE, incrDecr };
   const newState = { ...state, sorting: newSorting };
-  writeTodos(newState);
   return newState;
 };
 
