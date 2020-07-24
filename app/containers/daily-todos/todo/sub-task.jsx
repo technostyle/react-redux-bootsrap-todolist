@@ -19,7 +19,7 @@ export const SubTask = ({
       <Container>
         <Row>
           <Col> {text} </Col>
-          <Col>
+          <Col md={2}>
             {" "}
             {complete ? (
               <UndoButton onClick={onCompleteToggle} />
@@ -27,7 +27,7 @@ export const SubTask = ({
               <DoneButton onClick={onCompleteToggle} />
             )}{" "}
           </Col>
-          <Col>
+          <Col md={2}>
             <RemoveButton onClick={onRemove} />
           </Col>
         </Row>
