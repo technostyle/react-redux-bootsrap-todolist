@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
-import { FILTER_TYPES } from "modules/daily-todos/constants";
+import { FILTER_TYPES } from "modules/status-filter-bar/constants";
 
 export const StatusFilter = ({ activeFilter, onFilterChange }) => (
   <Navbar>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonGroup, ButtonToolbar, Navbar } from "react-bootstrap";
 import { ArrowDown, ArrowUp } from "react-bootstrap-icons";
-import { SORTING_TYPES } from "modules/daily-todos/constants";
+import { SORTING_TYPES } from "modules/sort-bar/constants";
 
 const Arrow = ({ incrDecr }) =>
   [SORTING_TYPES.INCR, SORTING_TYPES.DECR].includes(incrDecr) ? (

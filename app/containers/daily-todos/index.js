@@ -6,20 +6,21 @@ import {
   setTodoLevel,
   setTodoPriority,
   toggleComplete,
-  setFilter,
-  setLevelSorting,
-  setPrioritySorting,
-  setDateSorting,
   updateTodo,
   addSubTask,
   toggleCompleteSubTask,
   removeSubTask
 } from "modules/daily-todos/actions";
 import {
-  getDailyTodos,
-  getActiveFilter,
-  getSortingParams
-} from "modules/daily-todos/selectors";
+  setLevelSorting,
+  setPrioritySorting,
+  setDateSorting
+} from "modules/sort-bar/actions";
+import { setFilter } from "modules/status-filter-bar/actions";
+
+import { getDailyTodos } from "modules/daily-todos/selectors";
+import { getActiveFilter } from "modules/status-filter-bar/selectors";
+import { getSortingParams } from "modules/sort-bar/selectors";
 import { DailyTodos as Component } from "./daily-todos";
 
 const mapStateToProps = state => ({

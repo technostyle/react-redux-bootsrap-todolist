@@ -25,11 +25,6 @@ export const updateTodo = (id, text) => ({
   payload: { id, text }
 });
 
-export const setFilter = filter => ({
-  type: DAILY_TODOS_ACTIONS.SET_FILTER,
-  payload: filter
-});
-
 export const setTodoLevel = (id, level) => ({
   type: DAILY_TODOS_ACTIONS.SET_TODO_LEVEL,
   payload: { id, level }
@@ -38,19 +33,6 @@ export const setTodoLevel = (id, level) => ({
 export const setTodoPriority = (id, priority) => ({
   type: DAILY_TODOS_ACTIONS.SET_TODO_PRIORITY,
   payload: { id, priority }
-});
-
-// TODO: combine actions once sort bar is rewritten with hooks
-export const setPrioritySorting = () => ({
-  type: DAILY_TODOS_ACTIONS.SET_PRIORITY_SORTING
-});
-
-export const setLevelSorting = () => ({
-  type: DAILY_TODOS_ACTIONS.SET_LEVEL_SORTING
-});
-
-export const setDateSorting = () => ({
-  type: DAILY_TODOS_ACTIONS.SET_DATE_SORTING
 });
 
 export const addSubTask = (id, text) => ({

@@ -1,13 +1,1 @@
-export const FILTER_TYPES = {
-  ALL: "ALL",
-  COMPLETE: "COMPETE",
-  UNCOMPLETE: "UNCOMPLETE"
-};
-
-export const SORTING_TYPES = {
-  LEVEL: "LEVEL",
-  PRIORITY: "PRIORITY",
-  DATE: "DATE",
-  INCR: "INCR",
-  DECR: "DECR"
-};
+export const DAILY_TODOS_NAMESPACE = "dailyTodos";

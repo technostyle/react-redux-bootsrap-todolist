@@ -1,5 +1,6 @@
-import { get, noop } from "lodash";
-import { FILTER_TYPES, SORTING_TYPES } from "modules/daily-todos/constants";
+import { get } from "lodash";
+import { FILTER_TYPES } from "modules/status-filter-bar/constants";
+import { SORTING_TYPES } from "modules/sort-bar/constants";
 
 export const filterTodoCreator = activeFilter => {
   switch (activeFilter) {

@@ -29,5 +29,5 @@ const safeJsonStringify = data => {
   return EMPTY_JSON;
 };
 
-export const readTodos = flow(getTodos, safeJsonParse);
-export const writeTodos = flow(safeJsonStringify, setTodos);
+export const readState = flow(getTodos, safeJsonParse);
+export const writeState = flow(safeJsonStringify, setTodos);

@@ -1,10 +1,9 @@
-import { get } from "lodash";
-import { writeTodos } from "data-handler";
+import { writeState } from "data-handler";
 
 export const localStorageMiddleware = ({ getState }) => {
   return next => action => {
     const returnValue = next(action);
-    writeTodos(get(getState(), "dailyTodos"));
+    writeState(getState());
     return returnValue;
   };
 };

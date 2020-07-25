@@ -1,12 +1,21 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { dailyTodosReducer } from "modules/daily-todos/reducer";
+import { dailyTodosReducer, DAILY_TODOS_NAMESPACE } from "modules/daily-todos";
+import {
+  statusFilterReducer,
+  STATUS_FILTER_NAMESPACE
+} from "modules/status-filter-bar";
+import { sortBarReducer, SORT_BAR_NAMESPACE } from "modules/sort-bar";
 import { localStorageMiddleware } from "./local-storage-middleware";
+import { readState } from "../data-handler";
 
 // TODO: setLocalStorage with entire store, not just dailyTodos
-let initialState = {};
+let initialState = readState() || {};
+console.log(initialState);
 
 const reducer = combineReducers({
-  dailyTodos: dailyTodosReducer
+  [DAILY_TODOS_NAMESPACE]: dailyTodosReducer,
+  [STATUS_FILTER_NAMESPACE]: statusFilterReducer,
+  [SORT_BAR_NAMESPACE]: sortBarReducer
 });
 
 export default createStore(
