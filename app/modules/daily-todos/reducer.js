@@ -27,6 +27,7 @@ const DEFAULT_STATE = {
   }
 };
 const LOCAL_STORAGE_STATE = readTodos();
+console.log(LOCAL_STORAGE_STATE);
 const INITIAL_STATE = LOCAL_STORAGE_STATE || DEFAULT_STATE;
 
 const addTodo = (state, payload) => {
