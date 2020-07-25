@@ -29,5 +29,8 @@
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react-flip-move": "^3.0.4"
   }
 }

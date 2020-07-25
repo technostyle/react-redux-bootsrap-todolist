@@ -16,7 +16,7 @@ export const SubTaskList = ({
 }) => {
   return (
     <Collapse in={isOpen}>
-      <Container id='subtask-collapse'>
+      <Container id="subtask-collapse">
         <Row className="justify-content-md-center">
           <Col md={8}>
             <Input onEnter={onSubTaskInput} placeholder="input subtask" />
