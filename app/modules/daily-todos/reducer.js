@@ -1,5 +1,6 @@
 import { get } from "lodash";
 import { readTodos } from "data-handler";
+import { updateInArrayById } from "utils";
 import { FILTER_TYPES, SORTING_TYPES } from "./constants";
 
 export const DAILY_TODOS_ACTIONS = {
@@ -43,12 +44,10 @@ const removeTodo = (state, payload) => {
 
 const updateTodo = (state, payload) => {
   const { id, text } = payload;
-  const newTodos = state.todos.map(todo => {
-    if (todo.id !== id) {
-      return todo;
-    }
-
-    return { ...todo, text };
+  const newTodos = updateInArrayById({
+    array: state.todos,
+    itemId: id,
+    itemUpdate: { text }
   });
 
   return { ...state, todos: newTodos };
@@ -69,11 +68,10 @@ const toggleComplete = (state, payload) => {
 
 const setTodoLevel = (state, payload) => {
   const { id, level } = payload;
-  const newTodos = state.todos.map(todo => {
-    if (todo.id !== id) {
-      return todo;
-    }
-    return { ...todo, level };
+  const newTodos = updateInArrayById({
+    array: state.todos,
+    itemId: id,
+    itemUpdate: { level }
   });
 
   return { ...state, todos: newTodos };
@@ -81,16 +79,16 @@ const setTodoLevel = (state, payload) => {
 
 const setTodoPriority = (state, payload) => {
   const { id, priority } = payload;
-  const newTodos = state.todos.map(todo => {
-    if (todo.id !== id) {
-      return todo;
-    }
-    return { ...todo, priority };
+  const newTodos = updateInArrayById({
+    array: state.todos,
+    itemId: id,
+    itemUpdate: { priority }
   });
 
   return { ...state, todos: newTodos };
 };
 
+// TODO: create new reducer
 const setFilter = (state, payload) => {
   const [prev, cur] = payload;
   if (!cur) {
@@ -100,6 +98,17 @@ const setFilter = (state, payload) => {
   return { ...state, filter: cur };
 };
 
+// TODO: create new reducer
+const setDateSorting = state => {
+  const incrDecr =
+    get(state, "sorting.incrDecr") === SORTING_TYPES.DECR
+      ? SORTING_TYPES.INCR
+      : SORTING_TYPES.DECR;
+  const newSorting = { type: SORTING_TYPES.DATE, incrDecr };
+  return { ...state, sorting: newSorting };
+};
+
+// TODO: create new reducer
 const setLevelSorting = state => {
   const incrDecr =
     get(state, "sorting.incrDecr") === SORTING_TYPES.DECR
@@ -109,6 +118,7 @@ const setLevelSorting = state => {
   return { ...state, sorting: newSorting };
 };
 
+// TODO: create new reducer
 const setPrioritySorting = state => {
   const incrDecr =
     get(state, "sorting.incrDecr") === SORTING_TYPES.DECR
@@ -170,15 +180,6 @@ const removeSubTask = (state, payload) => {
   });
 
   return { ...state, todos: newTodos };
-};
-
-const setDateSorting = state => {
-  const incrDecr =
-    get(state, "sorting.incrDecr") === SORTING_TYPES.DECR
-      ? SORTING_TYPES.INCR
-      : SORTING_TYPES.DECR;
-  const newSorting = { type: SORTING_TYPES.DATE, incrDecr };
-  return { ...state, sorting: newSorting };
 };
 
 export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
