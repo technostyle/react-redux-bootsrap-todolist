@@ -146,15 +146,14 @@ export class Todo extends React.Component {
             <Col md={2}>{formatDate(id)}</Col>
           </Row>
 
-          {subTaskListOpen ? (
-            <SubTaskList
-              taskId={id}
-              onSubTaskInput={this.onSubTaskAdd}
-              subTaskList={subTaskList || []}
-              onSubTaskCompleteToggle={onSubTaskCompleteToggle}
-              onSubTaskRemove={onSubTaskRemove}
-            />
-          ) : null}
+          <SubTaskList
+            isOpen={subTaskListOpen}
+            taskId={id}
+            onSubTaskInput={this.onSubTaskAdd}
+            subTaskList={subTaskList || []}
+            onSubTaskCompleteToggle={onSubTaskCompleteToggle}
+            onSubTaskRemove={onSubTaskRemove}
+          />
         </Container>
       </ListGroup.Item>
     );

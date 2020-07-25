@@ -10,6 +10,8 @@ export const SubTaskListButton = ({ hasSubTask, onClick, isOpen }) => (
     variant={hasSubTask ? "outline-secondary" : ""}
     size="sm"
     onClick={onClick}
+    aria-controls="subtask-collapse"
+    aria-expanded={isOpen}
   >
     {hasSubTask ? <Chevron isOpen={isOpen} /> : <Plus size={20} color="blue" />}
   </Button>
