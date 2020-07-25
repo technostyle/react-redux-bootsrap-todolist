@@ -1,4 +1,3 @@
-import { get } from "lodash";
 import { updateInArrayById } from "utils";
 
 export const DAILY_TODOS_ACTIONS = {

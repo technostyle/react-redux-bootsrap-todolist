@@ -11,12 +11,6 @@ import {
   toggleCompleteSubTask,
   removeSubTask
 } from "modules/daily-todos/actions";
-import {
-  setLevelSorting,
-  setPrioritySorting,
-  setDateSorting
-} from "modules/sort-bar/actions";
-import { setFilter } from "modules/status-filter-bar/actions";
 
 import { getDailyTodos } from "modules/daily-todos/selectors";
 import { getActiveFilter } from "modules/status-filter-bar/selectors";
@@ -38,10 +32,6 @@ const mapDispatchToProps = dispatch =>
       setTodoLevel,
       setTodoPriority,
       toggleComplete,
-      setFilter,
-      setLevelSorting,
-      setPrioritySorting,
-      setDateSorting,
       addSubTask,
       toggleCompleteSubTask,
       removeSubTask

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/sort-bar/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/sort-bar/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/sort-bar/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/sort-bar/selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/store/local-storage-middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/local-storage-middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/daily-todos/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +26,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../online-test" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/containers/filter-sort-bar" />
+      <recent name="$PROJECT_DIR$/app/containers" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,10 +60,10 @@
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="266" y="40" width="424" height="497" key="FileChooserDialogImpl/0.27.960.513@0.27.960.513" timestamp="1595612837534" />
-    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595653832244">
+    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595717717449">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595653832244" />
+    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595717717449" />
     <state x="144" y="124" width="672" height="677" key="run.anything.popup" timestamp="1595644062314">
       <screen x="0" y="27" width="960" height="513" />
     </state>

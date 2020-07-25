@@ -1,6 +1,6 @@
 import { SORT_BAR_ACTIONS } from "./reducer";
 
-// TODO: combine actions once sort bar is rewritten with hooks
+// TODO: combine actions once sort filter-sort-bar is rewritten with hooks
 export const setPrioritySorting = () => ({
   type: SORT_BAR_ACTIONS.SET_PRIORITY_SORTING
 });

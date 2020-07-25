@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import { Header, TYPES } from "components/header";
 import { Input } from "components/input";
 import { List } from "./list";
-import { FilterBar } from "./filter-bar";
+import { FilterSortBar } from "../filter-sort-bar";
 
 export const DailyTodos = ({
   addTodo,
@@ -16,10 +16,6 @@ export const DailyTodos = ({
   setTodoLevel,
   setTodoPriority,
   activeFilter,
-  setFilter,
-  setLevelSorting,
-  setPrioritySorting,
-  setDateSorting,
   addSubTask,
   sortingParams,
   toggleCompleteSubTask,
@@ -33,15 +29,7 @@ export const DailyTodos = ({
     </Row>
     <Row className="justify-content-md-center">
       <Col md={8}>
-        {/*  TODO: rename to just Bar or something */}
-        <FilterBar
-          activeFilter={activeFilter}
-          onFilterChange={setFilter}
-          onLevelSort={setLevelSorting}
-          onPrioritySort={setPrioritySorting}
-          onDateSort={setDateSorting}
-          sortingParams={sortingParams}
-        />
+        <FilterSortBar />
       </Col>
     </Row>
     <Row className="justify-content-md-center">

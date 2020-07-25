@@ -8,7 +8,6 @@ import { sortBarReducer, SORT_BAR_NAMESPACE } from "modules/sort-bar";
 import { localStorageMiddleware } from "./local-storage-middleware";
 import { readState } from "../data-handler";
 
-// TODO: setLocalStorage with entire store, not just dailyTodos
 let initialState = readState() || {};
 console.log(initialState);
 
