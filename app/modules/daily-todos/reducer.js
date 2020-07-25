@@ -30,16 +30,14 @@ const LOCAL_STORAGE_STATE = readTodos();
 const INITIAL_STATE = LOCAL_STORAGE_STATE || DEFAULT_STATE;
 
 const addTodo = (state, payload) => {
-  const newState = { ...state, todos: [...state.todos, payload] };
-  return newState;
+  return { ...state, todos: [...state.todos, payload] };
 };
 
 const removeTodo = (state, payload) => {
-  const newState = {
+  return {
     ...state,
     todos: state.todos.filter(todo => todo.id !== payload)
   };
-  return newState;
 };
 
 const updateTodo = (state, payload) => {
@@ -52,8 +50,7 @@ const updateTodo = (state, payload) => {
     return { ...todo, text };
   });
 
-  const newState = { ...state, todos: newTodos };
-  return newState;
+  return { ...state, todos: newTodos };
 };
 
 const toggleComplete = (state, payload) => {
@@ -66,8 +63,7 @@ const toggleComplete = (state, payload) => {
     return { ...todo, complete: !currentStatus };
   });
 
-  const newState = { ...state, todos: newTodos };
-  return newState;
+  return { ...state, todos: newTodos };
 };
 
 const setTodoLevel = (state, payload) => {
@@ -79,8 +75,7 @@ const setTodoLevel = (state, payload) => {
     return { ...todo, level };
   });
 
-  const newState = { ...state, todos: newTodos };
-  return newState;
+  return { ...state, todos: newTodos };
 };
 
 const setTodoPriority = (state, payload) => {
@@ -92,8 +87,7 @@ const setTodoPriority = (state, payload) => {
     return { ...todo, priority };
   });
 
-  const newState = { ...state, todos: newTodos };
-  return newState;
+  return { ...state, todos: newTodos };
 };
 
 const setFilter = (state, payload) => {
@@ -102,8 +96,7 @@ const setFilter = (state, payload) => {
     return state;
   }
 
-  const newState = { ...state, filter: cur };
-  return newState;
+  return { ...state, filter: cur };
 };
 
 const setLevelSorting = state => {
@@ -112,8 +105,7 @@ const setLevelSorting = state => {
       ? SORTING_TYPES.INCR
       : SORTING_TYPES.DECR;
   const newSorting = { type: SORTING_TYPES.LEVEL, incrDecr };
-  const newState = { ...state, sorting: newSorting };
-  return newState;
+  return { ...state, sorting: newSorting };
 };
 
 const setPrioritySorting = state => {
@@ -122,8 +114,7 @@ const setPrioritySorting = state => {
       ? SORTING_TYPES.INCR
       : SORTING_TYPES.DECR;
   const newSorting = { type: SORTING_TYPES.PRIORITY, incrDecr };
-  const newState = { ...state, sorting: newSorting };
-  return newState;
+  return { ...state, sorting: newSorting };
 };
 
 const addSubTask = (state, payload) => {
@@ -137,8 +128,7 @@ const addSubTask = (state, payload) => {
     return { ...todo, subTaskList: newSubTaskList };
   });
 
-  const newState = { ...state, todos: newTodos };
-  return newState;
+  return { ...state, todos: newTodos };
 };
 
 const toggleCompleteSubTask = (state, payload) => {
@@ -160,8 +150,7 @@ const toggleCompleteSubTask = (state, payload) => {
     return { ...todo, subTaskList };
   });
 
-  const newState = { ...state, todos: newTodos };
-  return newState;
+  return { ...state, todos: newTodos };
 };
 
 const removeSubTask = (state, payload) => {
@@ -179,8 +168,7 @@ const removeSubTask = (state, payload) => {
     return { ...todo, subTaskList };
   });
 
-  const newState = { ...state, todos: newTodos };
-  return newState;
+  return { ...state, todos: newTodos };
 };
 
 const setDateSorting = state => {
@@ -189,8 +177,7 @@ const setDateSorting = state => {
       ? SORTING_TYPES.INCR
       : SORTING_TYPES.DECR;
   const newSorting = { type: SORTING_TYPES.DATE, incrDecr };
-  const newState = { ...state, sorting: newSorting };
-  return newState;
+  return { ...state, sorting: newSorting };
 };
 
 export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
