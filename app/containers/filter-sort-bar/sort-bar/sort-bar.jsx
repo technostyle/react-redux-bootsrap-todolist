@@ -12,41 +12,33 @@ const Arrow = ({ incrDecr }) =>
     )
   ) : null;
 
-export const SortBar = ({
-  setLevelSorting,
-  setPrioritySorting,
-  setDateSorting,
-  sortingParams
-}) => {
+const buttonLabels = {
+  [SORTING_TYPES.DATE]: "Date",
+  [SORTING_TYPES.LEVEL]: "Level",
+  [SORTING_TYPES.PRIORITY]: "Priority"
+};
+
+export const SortBar = ({ setSorting, sortingParams }) => {
   const { type, incrDecr } = sortingParams || {};
   return (
     <Navbar>
       <ButtonToolbar className="mb-2" aria-label="Toolbar with Button groups">
         <ButtonGroup className="mr-2" aria-label="First group">
-          <Button
-            size="sm"
-            variant="outline-secondary"
-            onClick={setDateSorting}
-          >
-            {type === SORTING_TYPES.DATE && <Arrow incrDecr={incrDecr} />}
-            Date
-          </Button>
-          <Button
-            size="sm"
-            variant="outline-secondary"
-            onClick={setLevelSorting}
-          >
-            {type === SORTING_TYPES.LEVEL && <Arrow incrDecr={incrDecr} />}
-            Level
-          </Button>
-          <Button
-            size="sm"
-            variant="outline-secondary"
-            onClick={setPrioritySorting}
-          >
-            {type === SORTING_TYPES.PRIORITY && <Arrow incrDecr={incrDecr} />}
-            Priority
-          </Button>
+          {[
+            SORTING_TYPES.DATE,
+            SORTING_TYPES.LEVEL,
+            SORTING_TYPES.PRIORITY
+          ].map(sortingType => (
+            <Button
+              key={sortingType}
+              size="sm"
+              variant="outline-secondary"
+              onClick={() => setSorting(sortingType)}
+            >
+              {type === sortingType && <Arrow incrDecr={incrDecr} />}
+              {buttonLabels[sortingType]}
+            </Button>
+          ))}
         </ButtonGroup>
       </ButtonToolbar>
     </Navbar>
