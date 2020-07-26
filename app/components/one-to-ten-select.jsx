@@ -12,7 +12,6 @@ const oneToTenArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const oneToTenArrayOnStrings = oneToTenArray.map(String);
 
 const ICON_SIZE = 15;
-// TODO: add icon size to theme.js
 const Icon = ({ icon }) => {
   switch (icon) {
     case "exclamation":
@@ -26,30 +25,6 @@ const Icon = ({ icon }) => {
     default:
       return null;
   }
-};
-
-const getVariant = value => {
-  if (1 <= value && value <= 2) {
-    return "danger";
-  }
-
-  if (3 <= value && value <= 4) {
-    return "warning";
-  }
-
-  if (5 <= value && value <= 6) {
-    return "info";
-  }
-
-  if (7 <= value && value <= 8) {
-    return "success";
-  }
-
-  if (9 <= value && value <= 10) {
-    return "secondary";
-  }
-
-  return "primary";
 };
 
 export class OneToTenSelect extends React.Component {
@@ -76,7 +51,7 @@ export class OneToTenSelect extends React.Component {
         {...this.props}
       >
         <Dropdown.Toggle
-          variant={getVariant(value)}
+          variant={value ? "outline-dark" : "outline-secondary"}
           size="sm"
           id="one-to-ten-selected-item"
         >
