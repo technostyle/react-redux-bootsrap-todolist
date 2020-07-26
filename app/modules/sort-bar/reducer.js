@@ -15,7 +15,6 @@ const setSorting = (state, payload) => {
     get(state, "incrDecr") === SORTING_TYPES.DECR
       ? SORTING_TYPES.INCR
       : SORTING_TYPES.DECR;
-  console.log({ payload, incrDecr });
 
   return { type: payload, incrDecr };
 };

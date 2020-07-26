@@ -49,3 +49,8 @@ export const removeSubTask = (taskId, subTaskId) => ({
   type: DAILY_TODOS_ACTIONS.REMOVE_SUB_TASK,
   payload: { taskId, subTaskId }
 });
+
+export const addDescription = (id, description) => ({
+  type: DAILY_TODOS_ACTIONS.ADD_DESCRIPTION,
+  payload: { id, description }
+});

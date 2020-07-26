@@ -9,7 +9,8 @@ export const DAILY_TODOS_ACTIONS = {
   UPDATE_TODO: "UPDATE_TODO",
   ADD_SUB_TASK: "ADD_SUB_TASK",
   TOGGLE_COMPLETE_SUB_TASK: "TOGGLE_COMPLETE_SUB_TASK",
-  REMOVE_SUB_TASK: "REMOVE_SUB_TASK"
+  REMOVE_SUB_TASK: "REMOVE_SUB_TASK",
+  ADD_DESCRIPTION: "ADD_DESCRIPTION"
 };
 
 const DEFAULT_STATE = {
@@ -35,6 +36,17 @@ const updateTodo = (state, payload) => {
     array: state.todos,
     itemId: id,
     itemUpdate: { text }
+  });
+
+  return { ...state, todos: newTodos };
+};
+
+const addDescription = (state, payload) => {
+  const { id, description } = payload;
+  const newTodos = updateInArrayById({
+    array: state.todos,
+    itemId: id,
+    itemUpdate: { description }
   });
 
   return { ...state, todos: newTodos };
@@ -149,6 +161,8 @@ export const dailyTodosReducer = (state = INITIAL_STATE, { type, payload }) => {
       return toggleCompleteSubTask(state, payload);
     case DAILY_TODOS_ACTIONS.REMOVE_SUB_TASK:
       return removeSubTask(state, payload);
+    case DAILY_TODOS_ACTIONS.ADD_DESCRIPTION:
+      return addDescription(state, payload);
     default:
       return state;
   }

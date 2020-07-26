@@ -83,12 +83,13 @@ export class Todo extends React.Component {
       complete,
       level,
       priority,
+      description,
       subTaskList,
       onModalOpen
     } = this.props;
     onModalOpen({
       modalName: INFO_BUTTON_MODAL_NAME,
-      props: { id, text, complete, level, priority, subTaskList }
+      props: { id, text, complete, level, priority, description, subTaskList }
     });
   }
 
@@ -185,6 +186,7 @@ export class Todo extends React.Component {
 Todo.propTypes = {
   id: PropTypes.any,
   text: PropTypes.string,
+  description: PropTypes.string,
   complete: PropTypes.bool,
   onCompleteToggle: PropTypes.func,
   onRemove: PropTypes.func,

@@ -9,8 +9,13 @@ export const TextArea = ({ onSave, initialText }) => {
 
   return (
     <Form>
-      <Form.Group onChange={onTextChange}>
-        <Form.Control as="textarea" rows="3" />
+      <Form.Group>
+        <Form.Control
+          as="textarea"
+          rows="3"
+          value={text}
+          onChange={onTextChange}
+        />
       </Form.Group>
       <Button variant="outline-primary" onClick={saveText}>
         Save

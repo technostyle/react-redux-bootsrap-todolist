@@ -24,26 +24,37 @@ export const TodoList = ({
         ? dailyTodos
             .filter(filterTodoCreator(activeFilter))
             .sort(sortParamsComparator(sortingParams))
-            .map(({ id, text, complete, subTaskList, level, priority }) => (
-              <Todo
-                key={id}
-                id={id}
-                text={text}
-                complete={complete}
-                onCompleteToggle={toggleComplete}
-                onRemove={removeTodo}
-                onTodoUpdate={updateTodo}
-                level={level}
-                priority={priority}
-                onLevelChange={setTodoLevel}
-                onPriorityChange={setTodoPriority}
-                onModalOpen={openModal}
-                onSubTaskAdd={addSubTask}
-                subTaskList={subTaskList}
-                onSubTaskCompleteToggle={toggleCompleteSubTask}
-                onSubTaskRemove={removeSubTask}
-              />
-            ))
+            .map(
+              ({
+                id,
+                text,
+                complete,
+                subTaskList,
+                level,
+                priority,
+                description
+              }) => (
+                <Todo
+                  key={id}
+                  id={id}
+                  text={text}
+                  complete={complete}
+                  onCompleteToggle={toggleComplete}
+                  onRemove={removeTodo}
+                  onTodoUpdate={updateTodo}
+                  level={level}
+                  priority={priority}
+                  description={description}
+                  onLevelChange={setTodoLevel}
+                  onPriorityChange={setTodoPriority}
+                  onModalOpen={openModal}
+                  onSubTaskAdd={addSubTask}
+                  subTaskList={subTaskList}
+                  onSubTaskCompleteToggle={toggleCompleteSubTask}
+                  onSubTaskRemove={removeSubTask}
+                />
+              )
+            )
         : null}
     </FlipMove>
   </ListGroup>

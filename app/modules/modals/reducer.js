@@ -16,7 +16,6 @@ const openModal = (state, payload) => {
 };
 
 const closeModal = (state, payload) => {
-  console.log("closeModal", { payload, state });
   const openModals = { ...state.openModals };
   delete openModals[payload];
   return { ...state, openModals };
