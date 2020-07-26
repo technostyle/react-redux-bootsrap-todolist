@@ -8,7 +8,7 @@ import {
   Bricks
 } from "react-bootstrap-icons";
 
-const oneToTenArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const oneToTenArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const oneToTenArrayOnStrings = oneToTenArray.map(String);
 
 const ICON_SIZE = 15;
