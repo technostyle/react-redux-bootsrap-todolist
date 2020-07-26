@@ -10,7 +10,7 @@ import { localStorageMiddleware } from "./local-storage-middleware";
 import { readState } from "../data-handler";
 
 let initialState = readState() || {};
-console.log({initialState});
+console.log({ initialState });
 
 const reducer = combineReducers({
   [MODALS_NAMESPACE]: modalsReducer,

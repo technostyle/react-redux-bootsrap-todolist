@@ -12,7 +12,7 @@ export const TextArea = ({ onSave, initialText }) => {
       <Form.Group>
         <Form.Control
           as="textarea"
-          rows="3"
+          rows="4"
           value={text}
           onChange={onTextChange}
         />
