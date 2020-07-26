@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/containers/list/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/filter-sort-bar/sort-bar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/filter-sort-bar/sort-bar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/filter-sort-bar/sort-bar/sort-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/filter-sort-bar/sort-bar/sort-bar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/sort-bar/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/sort-bar/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/sort-bar/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/sort-bar/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/daily-todos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo-list-manager/todo-list-manager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo-list-manager/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/list/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/list/list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/list/list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/list/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/list/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/done-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/done-button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/edit-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/edit-button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/remove-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/remove-button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list-buttons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/sub-task-list-buttons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/sub-task-list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/sub-task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/sub-task.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/todo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/daily-todos/todo/undo-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/undo-button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/selectors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +45,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/containers/filter-sort-bar" />
       <recent name="$PROJECT_DIR$/app/containers" />
+      <recent name="$PROJECT_DIR$/app/containers/filter-sort-bar" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -64,10 +76,10 @@
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="266" y="40" width="424" height="497" key="FileChooserDialogImpl/0.27.960.513@0.27.960.513" timestamp="1595612837534" />
-    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595717717449">
+    <state x="0" y="27" width="704" height="513" key="find.popup" timestamp="1595727421127">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595717717449" />
+    <state x="0" y="27" width="704" height="513" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595727421127" />
     <state x="144" y="124" width="672" height="677" key="run.anything.popup" timestamp="1595644062314">
       <screen x="0" y="27" width="960" height="513" />
     </state>

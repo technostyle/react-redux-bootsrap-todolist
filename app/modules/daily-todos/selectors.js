@@ -8,8 +8,3 @@ export const getDailyTodos = createSelector(
   getDailyTodosDomain,
   prop("todos", [])
 );
-
-export const getSortingParams = createSelector(
-  getDailyTodosDomain,
-  prop("sorting")
-);
