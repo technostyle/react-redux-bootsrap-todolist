@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/components/date-picker.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/modals/info-button-modal/info-button-modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modals/info-button-modal/info-button-modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/build.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,17 +67,21 @@
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="0" y="21" width="690" height="519" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.960.513@0.27.960.513" timestamp="1595741376076" />
-    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595741046167">
+    <state x="250" y="217" width="459" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595747377099">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595741046167" />
-    <state x="144" y="124" width="672" height="677" key="run.anything.popup" timestamp="1595738699315">
+    <state x="250" y="217" width="459" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.960.513@0.27.960.513" timestamp="1595747377099" />
+    <state x="0" y="27" width="704" height="513" key="find.popup" timestamp="1595747209659">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="144" y="124" width="672" height="677" key="run.anything.popup/0.27.960.513@0.27.960.513" timestamp="1595738699315" />
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595734749366">
+    <state x="0" y="27" width="704" height="513" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595747209659" />
+    <state x="144" y="124" width="672" height="677" key="run.anything.popup" timestamp="1595748115354">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595734749366" />
+    <state x="144" y="124" width="672" height="677" key="run.anything.popup/0.27.960.513@0.27.960.513" timestamp="1595748115354" />
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595747760448">
+      <screen x="0" y="27" width="960" height="513" />
+    </state>
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595747760448" />
   </component>
 </project>
