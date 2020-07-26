@@ -3,8 +3,11 @@ import {
   ButtonGroup,
   ButtonToolbar,
   Navbar,
-  ToggleButton
+  OverlayTrigger,
+  ToggleButton,
+  Tooltip
 } from "react-bootstrap";
+import { Calendar } from "react-bootstrap-icons";
 
 export const TodaySwitchFilter = ({ toggleTodayFilter, active }) => {
   const [checked, setChecked] = useState(active);
@@ -22,8 +25,18 @@ export const TodaySwitchFilter = ({ toggleTodayFilter, active }) => {
             variant={checked ? "secondary" : "outline-secondary"}
             checked={checked}
             onChange={onChange}
+            size="sm"
           >
-            Only Today
+            <OverlayTrigger
+              placement="bottom"
+              overlay={
+                <Tooltip id={"level-select-tooltip"}>
+                  Filter daily todos
+                </Tooltip>
+              }
+            >
+              <Calendar size={20} />
+            </OverlayTrigger>
           </ToggleButton>
         </ButtonGroup>{" "}
       </ButtonToolbar>

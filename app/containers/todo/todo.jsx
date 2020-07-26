@@ -6,7 +6,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import { formatDate } from "utils";
 import { OneToTenSelect } from "components/one-to-ten-select";
 import { Input } from "components/input";
 import { UndoButton } from "./undo-button";
@@ -182,7 +181,6 @@ export class Todo extends React.Component {
                 />
               </OverlayTrigger>
             </Col>
-            {/*<Col md={2}>{formatDate(id)}</Col>*/}
           </Row>
 
           <SubTaskList
