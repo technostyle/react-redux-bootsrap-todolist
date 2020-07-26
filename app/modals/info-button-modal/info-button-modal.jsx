@@ -19,6 +19,7 @@ import { Input } from "components/input";
 import { MyDatePicker } from "components/date-picker";
 import { formatDate } from "utils";
 import { INFO_BUTTON_MODAL_NAME } from "./constants";
+import { ResetButton } from "./reset-button";
 
 const ICON_SIZE = 25;
 
@@ -55,10 +56,12 @@ export const InfoButtonModal = ({
     setEstimateState(estimate);
     setEstimate(id, estimate);
   };
+  const onEstimateReset = () => onEstimateChange(null);
   const onWorkLogChange = workLog => {
     setWorkLogState(workLog);
     setWorkLog(id, workLog);
   };
+  const onWorkLogReset = () => onWorkLogChange(null);
 
   const onStartDaySet = startDay => setStartDay(id, startDay);
   const onDeadlineSet = deadline => setDeadline(id, deadline);
@@ -114,6 +117,9 @@ export const InfoButtonModal = ({
               <Col md={3}>
                 <Input onEnter={onEstimateChange} placeholder="5m 3w 2d 14h" />
               </Col>
+              <Col md={1}>
+                <ResetButton onClick={onEstimateReset} />
+              </Col>
             </Row>
           </ListGroupItem>
           <ListGroupItem>
@@ -124,6 +130,9 @@ export const InfoButtonModal = ({
               <Col md={3}>{workLogState}</Col>
               <Col md={3}>
                 <Input onEnter={onWorkLogChange} placeholder="5m 3w 2d 14h" />
+              </Col>
+              <Col md={1}>
+                <ResetButton onClick={onWorkLogReset} />
               </Col>
             </Row>
           </ListGroupItem>

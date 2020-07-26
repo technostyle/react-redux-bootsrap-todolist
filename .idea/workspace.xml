@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/modals/info-button-modal/reset-button.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/date-picker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/date-picker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/todo-list/todo-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo-list/todo-list.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/todo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modals/info-button-modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modals/info-button-modal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/modals/info-button-modal/info-button-modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modals/info-button-modal/info-button-modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/daily-todos/reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,17 +69,17 @@
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="250" y="217" width="459" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.960.513@0.27.960.513" timestamp="1595747377099" />
-    <state x="0" y="27" width="704" height="513" key="find.popup" timestamp="1595762609442">
+    <state x="0" y="27" width="704" height="513" key="find.popup" timestamp="1595766767103">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="513" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595762609442" />
+    <state x="0" y="27" width="704" height="513" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595766767103" />
     <state x="144" y="124" width="672" height="677" key="run.anything.popup" timestamp="1595748115354">
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="144" y="124" width="672" height="677" key="run.anything.popup/0.27.960.513@0.27.960.513" timestamp="1595748115354" />
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595763437192">
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595766758690">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595763437192" />
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595766758690" />
   </component>
 </project>
