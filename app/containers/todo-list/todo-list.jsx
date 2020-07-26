@@ -1,12 +1,17 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import FlipMove from "react-flip-move";
-import { filterTodoCreator, sortParamsComparator } from "./utils";
+import {
+  filterTodoCreator,
+  sortParamsComparator,
+  onlyForTodayFilterCreator
+} from "./utils";
 import { Todo } from "../todo";
 
 export const TodoList = ({
   dailyTodos,
   activeFilter,
+  shouldShowOnlyForToday,
   sortingParams,
   removeTodo,
   updateTodo,
@@ -22,6 +27,7 @@ export const TodoList = ({
     <FlipMove>
       {dailyTodos.length
         ? dailyTodos
+            .filter(onlyForTodayFilterCreator(shouldShowOnlyForToday))
             .filter(filterTodoCreator(activeFilter))
             .sort(sortParamsComparator(sortingParams))
             .map(

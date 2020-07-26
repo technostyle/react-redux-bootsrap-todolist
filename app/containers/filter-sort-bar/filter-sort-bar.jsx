@@ -1,9 +1,9 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Row, Col } from "react-bootstrap";
 import { StatusFilter } from "containers/filter-sort-bar/status-filter";
 import { SortBar } from "containers/filter-sort-bar/sort-bar";
+import { TodaySwitchFilter } from "./today-switch-filter";
 
 export const FilterSortBar = () => (
   <Container>
@@ -13,6 +13,9 @@ export const FilterSortBar = () => (
       </Col>
       <Col>
         <SortBar />
+      </Col>
+      <Col>
+        <TodaySwitchFilter />
       </Col>
     </Row>
   </Container>

@@ -8,3 +8,8 @@ export const getActiveFilter = createSelector(
   getStatusFilterDomain,
   prop("filter", null)
 );
+
+export const getShouldShowOnlyForToday = createSelector(
+  getStatusFilterDomain,
+  prop("showOnlyForToday", false)
+);

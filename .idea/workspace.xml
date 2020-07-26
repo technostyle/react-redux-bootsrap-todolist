@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/modals/info-button-modal/reset-button.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/containers/filter-sort-bar/today-switch-filter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/containers/filter-sort-bar/today-switch-filter/today-switch-filter.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modals/info-button-modal/info-button-modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modals/info-button-modal/info-button-modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/date-picker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/date-picker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/filter-sort-bar/filter-sort-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/filter-sort-bar/filter-sort-bar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/todo-list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo-list/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/todo-list/todo-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo-list/todo-list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/todo-list/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo-list/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/status-filter-bar/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/status-filter-bar/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/status-filter-bar/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/status-filter-bar/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/status-filter-bar/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/status-filter-bar/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/store/local-storage-middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/local-storage-middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/date-formatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/date-formatter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/build.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,21 +77,21 @@
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="0" y="21" width="690" height="519" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.960.513@0.27.960.513" timestamp="1595741376076" />
-    <state x="250" y="217" width="459" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595747377099">
+    <state x="250" y="211" width="459" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595776057484">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="250" y="217" width="459" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.960.513@0.27.960.513" timestamp="1595747377099" />
-    <state x="0" y="27" width="704" height="513" key="find.popup" timestamp="1595766767103">
+    <state x="250" y="211" width="459" height="173" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.960.513@0.27.960.513" timestamp="1595776057484" />
+    <state x="0" y="27" width="704" height="520" key="find.popup" timestamp="1595776827973">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="0" y="27" width="704" height="513" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595766767103" />
+    <state x="0" y="27" width="704" height="520" key="find.popup/0.27.960.513@0.27.960.513" timestamp="1595776827973" />
     <state x="144" y="124" width="672" height="677" key="run.anything.popup" timestamp="1595748115354">
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="144" y="124" width="672" height="677" key="run.anything.popup/0.27.960.513@0.27.960.513" timestamp="1595748115354" />
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595766758690">
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595776192397">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595766758690" />
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595776192397" />
   </component>
 </project>

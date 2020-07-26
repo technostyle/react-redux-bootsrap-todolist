@@ -1,6 +1,7 @@
 import { get } from "lodash";
 import { FILTER_TYPES } from "modules/status-filter-bar/constants";
 import { SORTING_TYPES } from "modules/sort-bar/constants";
+import { isToday } from "utils";
 
 export const filterTodoCreator = activeFilter => {
   switch (activeFilter) {
@@ -34,3 +35,6 @@ export const sortParamsComparator = (sortingParams = {}) => {
     incrDecr === SORTING_TYPES.INCR
   );
 };
+
+export const onlyForTodayFilterCreator = onlyForToday =>
+  onlyForToday ? ({ startDay }) => !!startDay && isToday(startDay) : () => true;

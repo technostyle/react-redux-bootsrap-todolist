@@ -5,3 +5,13 @@ export const formatDate = id => {
     date.getMonth() + 1
   )}/${date.getFullYear()}`;
 };
+
+export const isToday = date => {
+  const today = new Date();
+  const currentDate = new Date(date);
+  return (
+    currentDate.getDate() === today.getDate() &&
+    currentDate.getMonth() === today.getMonth() &&
+    currentDate.getFullYear() === today.getFullYear()
+  );
+};
