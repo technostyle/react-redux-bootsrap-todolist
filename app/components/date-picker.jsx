@@ -11,7 +11,7 @@ export const MyDatePicker = ({ onSelect, startDate }) => {
   const selectDate = () => onSelect(date);
   return (
     <>
-      <Col>
+      <Col md={3}>
         <DatePicker
           selected={date}
           onChange={onChange}

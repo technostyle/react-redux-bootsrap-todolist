@@ -2,20 +2,20 @@ import React from "react";
 import {
   Modal,
   Button,
-  Container,
   Row,
   Col,
   ListGroup,
-  ListGroupItem,
-  Jumbotron
+  ListGroupItem
 } from "react-bootstrap";
 import {
-  Egg,
+  Clock,
+  ClockFill,
   HourglassSplit,
   HourglassTop,
   HourglassBottom
 } from "react-bootstrap-icons";
 import { TextArea } from "components/text-area";
+import { Input } from "components/input";
 import { MyDatePicker } from "components/date-picker";
 import { formatDate } from "utils";
 import { INFO_BUTTON_MODAL_NAME } from "./constants";
@@ -46,15 +46,15 @@ export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
         <ListGroup>
           <ListGroupItem>
             <Row>
-              <Col>
-                <Egg size={ICON_SIZE} /> Creation time:
+              <Col md={4}>
+                <Clock size={ICON_SIZE} /> Creation time:
               </Col>
-              <Col>{formatDate(id)}</Col>
+              <Col md={3}>{formatDate(id)}</Col>
             </Row>
           </ListGroupItem>
           <ListGroupItem>
             <Row>
-              <Col>
+              <Col md={4}>
                 <HourglassTop size={ICON_SIZE} />
                 Start day:
               </Col>
@@ -63,7 +63,7 @@ export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
           </ListGroupItem>
           <ListGroupItem>
             <Row>
-              <Col>
+              <Col md={4}>
                 <HourglassBottom size={ICON_SIZE} />
                 Deadline:
               </Col>
@@ -72,9 +72,24 @@ export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
           </ListGroupItem>
           <ListGroupItem>
             <Row>
-              <Col>
+              <Col md={4}>
                 <HourglassSplit size={ICON_SIZE} />
                 Estimate:
+              </Col>
+              <Col md={3}>no estimate set</Col>
+              <Col md={3}>
+                <Input onEnter={console.log} placeholder="3w 2d 14h 43m" />
+              </Col>
+            </Row>
+          </ListGroupItem>
+          <ListGroupItem>
+            <Row>
+              <Col md={4}>
+                <ClockFill size={ICON_SIZE} /> Work log:
+              </Col>
+              <Col md={3}>no work logged</Col>
+              <Col md={3}>
+                <Input onEnter={console.log} placeholder="3w 2d 14h 43m" />
               </Col>
             </Row>
           </ListGroupItem>
