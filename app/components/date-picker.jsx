@@ -5,8 +5,8 @@ import { Lock } from "react-bootstrap-icons";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export const MyDatePicker = ({ onSelect, startDate }) => {
-  const [date, setDate] = useState(new Date(startDate) || null);
+export const MyDatePicker = ({ onSelect, initialDate }) => {
+  const [date, setDate] = useState(initialDate && new Date(initialDate));
   const onChange = date => setDate(date);
   const selectDate = () => onSelect(date);
   return (

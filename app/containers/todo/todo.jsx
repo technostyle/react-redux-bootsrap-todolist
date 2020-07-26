@@ -85,11 +85,27 @@ export class Todo extends React.Component {
       priority,
       description,
       subTaskList,
+      startDay,
+      deadline,
+      estimate,
+      workLog,
       onModalOpen
     } = this.props;
     onModalOpen({
       modalName: INFO_BUTTON_MODAL_NAME,
-      props: { id, text, complete, level, priority, description, subTaskList }
+      props: {
+        id,
+        text,
+        complete,
+        level,
+        priority,
+        description,
+        subTaskList,
+        startDay,
+        deadline,
+        estimate,
+        workLog
+      }
     });
   }
 

@@ -54,3 +54,23 @@ export const addDescription = (id, description) => ({
   type: DAILY_TODOS_ACTIONS.ADD_DESCRIPTION,
   payload: { id, description }
 });
+
+export const setStartDay = (id, startDay) => ({
+  type: DAILY_TODOS_ACTIONS.SET_START_DAY,
+  payload: { id, startDay }
+});
+
+export const setDeadline = (id, deadline) => ({
+  type: DAILY_TODOS_ACTIONS.SET_DEADLINE,
+  payload: { id, deadline }
+});
+
+export const setEstimate = (id, estimate) => ({
+  type: DAILY_TODOS_ACTIONS.SET_ESTIMATE,
+  payload: { id, estimate }
+});
+
+export const setWorkLog = (id, workLog) => ({
+  type: DAILY_TODOS_ACTIONS.SET_WORK_LOG,
+  payload: { id, workLog }
+});

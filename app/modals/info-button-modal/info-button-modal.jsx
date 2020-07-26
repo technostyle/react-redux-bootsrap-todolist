@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Modal,
   Button,
@@ -22,12 +22,46 @@ import { INFO_BUTTON_MODAL_NAME } from "./constants";
 
 const ICON_SIZE = 25;
 
-export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
-  const { id, text, description } = params;
+export const InfoButtonModal = ({
+  params,
+  closeModal,
+  addDescription,
+  setStartDay,
+  setDeadline,
+  setEstimate,
+  setWorkLog
+}) => {
+  const {
+    id,
+    text,
+    description,
+    startDay,
+    deadline,
+    estimate,
+    workLog
+  } = params;
+
   const onClose = () => closeModal(INFO_BUTTON_MODAL_NAME);
-  const onDescriptionSave = description => {
+
+  const [descriptionState, setDescriptionState] = useState(description);
+  const [estimateState, setEstimateState] = useState(estimate);
+  const [workLogState, setWorkLogState] = useState(workLog);
+
+  const onDescriptionChange = description => {
+    setDescriptionState(description);
     addDescription(id, description);
   };
+  const onEstimateChange = estimate => {
+    setEstimateState(estimate);
+    setEstimate(id, estimate);
+  };
+  const onWorkLogChange = workLog => {
+    setWorkLogState(workLog);
+    setWorkLog(id, workLog);
+  };
+
+  const onStartDaySet = startDay => setStartDay(id, startDay);
+  const onDeadlineSet = deadline => setDeadline(id, deadline);
 
   return (
     <Modal
@@ -58,7 +92,7 @@ export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
                 <HourglassTop size={ICON_SIZE} />
                 Start day:
               </Col>
-              <MyDatePicker onSelect={console.log} startDate={Date.now()} />
+              <MyDatePicker onSelect={onStartDaySet} initialDate={startDay} />
             </Row>
           </ListGroupItem>
           <ListGroupItem>
@@ -67,7 +101,7 @@ export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
                 <HourglassBottom size={ICON_SIZE} />
                 Deadline:
               </Col>
-              <MyDatePicker onSelect={console.log} startDate={Date.now()} />
+              <MyDatePicker onSelect={onDeadlineSet} initialDate={deadline} />
             </Row>
           </ListGroupItem>
           <ListGroupItem>
@@ -76,9 +110,9 @@ export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
                 <HourglassSplit size={ICON_SIZE} />
                 Estimate:
               </Col>
-              <Col md={3}>no estimate set</Col>
+              <Col md={3}>{estimateState}</Col>
               <Col md={3}>
-                <Input onEnter={console.log} placeholder="3w 2d 14h 43m" />
+                <Input onEnter={onEstimateChange} placeholder="5m 3w 2d 14h" />
               </Col>
             </Row>
           </ListGroupItem>
@@ -87,15 +121,15 @@ export const InfoButtonModal = ({ params, closeModal, addDescription }) => {
               <Col md={4}>
                 <ClockFill size={ICON_SIZE} /> Work log:
               </Col>
-              <Col md={3}>no work logged</Col>
+              <Col md={3}>{workLogState}</Col>
               <Col md={3}>
-                <Input onEnter={console.log} placeholder="3w 2d 14h 43m" />
+                <Input onEnter={onWorkLogChange} placeholder="5m 3w 2d 14h" />
               </Col>
             </Row>
           </ListGroupItem>
         </ListGroup>
         <h4>Description</h4>
-        <TextArea initialText={description} onSave={onDescriptionSave} />
+        <TextArea initialText={descriptionState} onSave={onDescriptionChange} />
       </Modal.Body>
       <Modal.Footer>
         <Button variant="outline-primary" onClick={onClose}>

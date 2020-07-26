@@ -32,24 +32,32 @@ export const TodoList = ({
                 subTaskList,
                 level,
                 priority,
-                description
+                description,
+                startDay,
+                deadline,
+                estimate,
+                workLog
               }) => (
                 <Todo
                   key={id}
                   id={id}
                   text={text}
                   complete={complete}
-                  onCompleteToggle={toggleComplete}
-                  onRemove={removeTodo}
-                  onTodoUpdate={updateTodo}
+                  startDay={startDay}
                   level={level}
                   priority={priority}
                   description={description}
+                  subTaskList={subTaskList}
+                  deadline={deadline}
+                  estimate={estimate}
+                  workLog={workLog}
+                  onCompleteToggle={toggleComplete}
+                  onRemove={removeTodo}
+                  onTodoUpdate={updateTodo}
                   onLevelChange={setTodoLevel}
                   onPriorityChange={setTodoPriority}
                   onModalOpen={openModal}
                   onSubTaskAdd={addSubTask}
-                  subTaskList={subTaskList}
                   onSubTaskCompleteToggle={toggleCompleteSubTask}
                   onSubTaskRemove={removeSubTask}
                 />
