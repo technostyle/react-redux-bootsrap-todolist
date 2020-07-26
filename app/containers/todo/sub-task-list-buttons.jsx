@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { ChevronDown, ChevronUp, Plus } from "react-bootstrap-icons";
+import { ChevronDown, ChevronUp, Diagram3 } from "react-bootstrap-icons";
 
 const Chevron = ({ isOpen }) =>
   isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />;
@@ -13,6 +13,10 @@ export const SubTaskListButton = ({ hasSubTask, onClick, isOpen }) => (
     aria-controls="subtask-collapse"
     aria-expanded={isOpen}
   >
-    {hasSubTask ? <Chevron isOpen={isOpen} /> : <Plus size={20} color="blue" />}
+    {hasSubTask ? (
+      <Chevron isOpen={isOpen} />
+    ) : (
+      <Diagram3 size={20} color="grey" />
+    )}
   </Button>
 );
