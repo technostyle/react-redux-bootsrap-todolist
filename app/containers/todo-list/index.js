@@ -10,7 +10,7 @@ import {
   toggleCompleteSubTask,
   removeSubTask
 } from "modules/daily-todos/actions";
-
+import { openModal } from "modules/modals/actions";
 import { getDailyTodos } from "modules/daily-todos/selectors";
 import { getActiveFilter } from "modules/status-filter-bar/selectors";
 import { getSortingParams } from "modules/sort-bar/selectors";
@@ -32,7 +32,8 @@ const mapDispatchToProps = dispatch =>
       toggleComplete,
       addSubTask,
       toggleCompleteSubTask,
-      removeSubTask
+      removeSubTask,
+      openModal
     },
     dispatch
   );

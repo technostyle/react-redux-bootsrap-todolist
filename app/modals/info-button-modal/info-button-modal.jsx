@@ -1,33 +1,37 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import { TextArea } from "components/text-area";
+import { formatDate } from "utils";
+import { INFO_BUTTON_MODAL_NAME } from "./constants";
 
-export const InfoButtonModal = ({ params }) => {
-  const { onClose, props } = params || {};
-  console.log("InfoButtonModal", { props });
-
+export const InfoButtonModal = ({ params, closeModal }) => {
+  const { id, text } = params;
+  const onClose = () => closeModal(INFO_BUTTON_MODAL_NAME);
   return (
     <Modal
-      show={!!params}
-      onClose={onClose}
+      show={!!id}
+      onHide={onClose}
       size="lg"
+      scrollable
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          {text} {formatDate(id)}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <h4>Description</h4>
+        <TextArea onSave={console.log} />
+        <h4>Time control</h4>
+        <p>Set deadline</p>
+        <p>Estimate time</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={onClose}>Close</Button>
+        <Button variant="outline-primary" onClick={onClose}>
+          Close
+        </Button>
       </Modal.Footer>
     </Modal>
   );

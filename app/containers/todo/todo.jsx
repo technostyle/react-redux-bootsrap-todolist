@@ -13,8 +13,10 @@ import { UndoButton } from "./undo-button";
 import { DoneButton } from "./done-button";
 import { RemoveButton } from "./remove-button";
 import { EditButton } from "./edit-button";
+import { InfoButton } from "./info-button";
 import { SubTaskListButton } from "./sub-task-list-buttons";
 import { SubTaskList } from "./sub-task-list";
+import { INFO_BUTTON_MODAL_NAME } from "../../modals/info-button-modal/constants";
 
 export class Todo extends React.Component {
   constructor(props) {
@@ -29,6 +31,7 @@ export class Todo extends React.Component {
     this.onTodoUpdate = this.onTodoUpdate.bind(this);
     this.onSubTaskListToggle = this.onSubTaskListToggle.bind(this);
     this.onSubTaskAdd = this.onSubTaskAdd.bind(this);
+    this.onInfoModalOpen = this.onInfoModalOpen.bind(this);
   }
 
   onCompleteToggle(event) {
@@ -71,6 +74,22 @@ export class Todo extends React.Component {
 
   onSubTaskAdd(text) {
     this.props.onSubTaskAdd(this.props.id, text);
+  }
+
+  onInfoModalOpen() {
+    const {
+      id,
+      text,
+      complete,
+      level,
+      priority,
+      subTaskList,
+      onModalOpen
+    } = this.props;
+    onModalOpen({
+      modalName: INFO_BUTTON_MODAL_NAME,
+      props: { id, text, complete, level, priority, subTaskList }
+    });
   }
 
   render() {
@@ -118,6 +137,9 @@ export class Todo extends React.Component {
               <RemoveButton onClick={this.onRemove} />
             </Col>
             <Col md={1}>
+              <InfoButton onClick={this.onInfoModalOpen} />
+            </Col>
+            <Col md={1}>
               <OverlayTrigger
                 placement="bottom"
                 overlay={<Tooltip id={"level-select-tooltip"}>Level</Tooltip>}
@@ -143,7 +165,7 @@ export class Todo extends React.Component {
                 />
               </OverlayTrigger>
             </Col>
-            <Col md={2}>{formatDate(id)}</Col>
+            {/*<Col md={2}>{formatDate(id)}</Col>*/}
           </Row>
 
           <SubTaskList
@@ -174,5 +196,6 @@ Todo.propTypes = {
   onSubTaskAdd: PropTypes.func,
   subTaskList: PropTypes.any,
   onSubTaskCompleteToggle: PropTypes.func,
-  onSubTaskRemove: PropTypes.func
+  onSubTaskRemove: PropTypes.func,
+  onModalOpen: PropTypes.func
 };

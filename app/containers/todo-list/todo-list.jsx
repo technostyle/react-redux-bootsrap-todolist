@@ -10,6 +10,7 @@ export const TodoList = ({
   sortingParams,
   removeTodo,
   updateTodo,
+  openModal,
   setTodoLevel,
   setTodoPriority,
   toggleComplete,
@@ -36,6 +37,7 @@ export const TodoList = ({
                 priority={priority}
                 onLevelChange={setTodoLevel}
                 onPriorityChange={setTodoPriority}
+                onModalOpen={openModal}
                 onSubTaskAdd={addSubTask}
                 subTaskList={subTaskList}
                 onSubTaskCompleteToggle={toggleCompleteSubTask}

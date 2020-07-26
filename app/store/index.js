@@ -1,4 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
+import { modalsReducer, MODALS_NAMESPACE } from "modules/modals";
 import { dailyTodosReducer, DAILY_TODOS_NAMESPACE } from "modules/daily-todos";
 import {
   statusFilterReducer,
@@ -12,6 +13,7 @@ let initialState = readState() || {};
 console.log(initialState);
 
 const reducer = combineReducers({
+  [MODALS_NAMESPACE]: modalsReducer,
   [DAILY_TODOS_NAMESPACE]: dailyTodosReducer,
   [STATUS_FILTER_NAMESPACE]: statusFilterReducer,
   [SORT_BAR_NAMESPACE]: sortBarReducer

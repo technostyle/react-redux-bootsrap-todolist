@@ -10,12 +10,13 @@ const initialState = {
 };
 
 const openModal = (state, payload) => {
-  const { modalName, props, onClose } = payload;
-  const openModals = { ...state.openModals, [modalName]: { props, onClose } };
+  const { modalName, props } = payload;
+  const openModals = { ...state.openModals, [modalName]: props };
   return { ...state, openModals };
 };
 
 const closeModal = (state, payload) => {
+  console.log("closeModal", { payload, state });
   const openModals = { ...state.openModals };
   delete openModals[payload];
   return { ...state, openModals };
