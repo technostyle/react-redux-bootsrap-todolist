@@ -3,6 +3,7 @@ import { ListGroupItem, Container, Row, Col } from "react-bootstrap";
 import { DoneButton } from "./done-button";
 import { UndoButton } from "./undo-button";
 import { RemoveButton } from "./remove-button";
+import { TextOrLink } from "components/text-or-link";
 
 export const SubTask = ({
   taskId,
@@ -18,7 +19,10 @@ export const SubTask = ({
     <ListGroupItem variant={complete ? "success" : "light"}>
       <Container>
         <Row>
-          <Col> {text} </Col>
+          <Col>
+            {" "}
+            <TextOrLink text={text} />
+          </Col>
           <Col md={2}>
             {" "}
             {complete ? (

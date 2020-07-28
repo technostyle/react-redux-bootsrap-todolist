@@ -15,7 +15,8 @@ import { EditButton } from "./edit-button";
 import { InfoButton } from "./info-button";
 import { SubTaskListButton } from "./sub-task-list-buttons";
 import { SubTaskList } from "./sub-task-list";
-import { INFO_BUTTON_MODAL_NAME } from "../../modals/info-button-modal/constants";
+import { INFO_BUTTON_MODAL_NAME } from "modals/info-button-modal/constants";
+import { TextOrLink } from "components/text-or-link";
 
 export class Todo extends React.Component {
   constructor(props) {
@@ -136,7 +137,7 @@ export class Todo extends React.Component {
               {editing ? (
                 <Input onEnter={this.onTodoUpdate} placeholder={text} />
               ) : (
-                text
+                <TextOrLink text={text} />
               )}
             </Col>
             <Col md={1}>
