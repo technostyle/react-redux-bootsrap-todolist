@@ -20,9 +20,7 @@ const setFilter = (state, payload) => {
 };
 
 const setTodayFilter = state => {
-  console.log({ state });
   return { ...state, showOnlyForToday: !state.showOnlyForToday };
-  console.log({ state });
 };
 
 export const statusFilterReducer = (
