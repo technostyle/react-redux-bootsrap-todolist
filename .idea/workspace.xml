@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/containers/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/todo.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +46,7 @@
       <workItem from="1595619392757" duration="2439000" />
       <workItem from="1595643155321" duration="1047000" />
       <workItem from="1595709825492" duration="654000" />
-      <workItem from="1595894251589" duration="239000" />
+      <workItem from="1595894251589" duration="374000" />
     </task>
     <servers />
   </component>
