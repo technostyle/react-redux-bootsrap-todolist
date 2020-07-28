@@ -31,7 +31,7 @@ export const TodaySwitchFilter = ({ toggleTodayFilter, active }) => {
               placement="bottom"
               overlay={
                 <Tooltip id={"level-select-tooltip"}>
-                  Filter daily todos
+                  Scheduled for today
                 </Tooltip>
               }
             >
