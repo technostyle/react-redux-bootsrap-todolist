@@ -5,7 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { ButtonGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { OneToTenSelect } from "components/one-to-ten-select";
 import { Input } from "components/input";
 import { UndoButton } from "./undo-button";
@@ -155,31 +155,31 @@ export class Todo extends React.Component {
             <Col md={1}>
               <InfoButton onClick={this.onInfoModalOpen} />
             </Col>
-            <Col md={1}>
-              <OverlayTrigger
-                placement="bottom"
-                overlay={<Tooltip id={"level-select-tooltip"}>Level</Tooltip>}
-              >
-                <OneToTenSelect
-                  icon="trophy"
-                  value={level}
-                  onChange={this.onLevelChange}
-                />
-              </OverlayTrigger>
-            </Col>
-            <Col>
-              <OverlayTrigger
-                placement="bottom"
-                overlay={
-                  <Tooltip id={"level-select-tooltip"}>Priority</Tooltip>
-                }
-              >
-                <OneToTenSelect
-                  icon="lightning"
-                  value={priority}
-                  onChange={this.onPriorityChange}
-                />
-              </OverlayTrigger>
+            <Col md={3}>
+              <ButtonGroup>
+                <OverlayTrigger
+                  placement="bottom"
+                  overlay={<Tooltip id={"level-select-tooltip"}>Level</Tooltip>}
+                >
+                  <OneToTenSelect
+                    icon="trophy"
+                    value={level}
+                    onChange={this.onLevelChange}
+                  />
+                </OverlayTrigger>
+                <OverlayTrigger
+                  placement="bottom"
+                  overlay={
+                    <Tooltip id={"level-select-tooltip"}>Priority</Tooltip>
+                  }
+                >
+                  <OneToTenSelect
+                    icon="lightning"
+                    value={priority}
+                    onChange={this.onPriorityChange}
+                  />
+                </OverlayTrigger>
+              </ButtonGroup>
             </Col>
           </Row>
 

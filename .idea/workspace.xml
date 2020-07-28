@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea05813-19f8-4674-ad10-c4f1c424190a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/one-to-ten-select.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/containers/todo/todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/containers/todo/todo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +50,7 @@
       <workItem from="1595619392757" duration="2439000" />
       <workItem from="1595643155321" duration="1047000" />
       <workItem from="1595709825492" duration="654000" />
+      <workItem from="1595894251589" duration="239000" />
     </task>
     <servers />
   </component>
@@ -75,9 +78,9 @@
       <screen x="0" y="27" width="960" height="513" />
     </state>
     <state x="144" y="124" width="672" height="677" key="run.anything.popup/0.27.960.513@0.27.960.513" timestamp="1595748115354" />
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595777101839">
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup" timestamp="1595894260300">
       <screen x="0" y="27" width="960" height="513" />
     </state>
-    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595777101839" />
+    <state x="143" y="27" width="672" height="511" key="search.everywhere.popup/0.27.960.513@0.27.960.513" timestamp="1595894260300" />
   </component>
 </project>
