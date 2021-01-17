@@ -6,7 +6,8 @@ export const addTodo = text => ({
     id: Date.now(),
     text,
     complete: false,
-    subTaskList: []
+    subTaskList: [],
+    priority: 0
   }
 });
 
